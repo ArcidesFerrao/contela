@@ -36,6 +36,11 @@ export default async function ItemsPage() {
           },
         },
       },
+      orderBy: {
+        stockItem: {
+          name: "asc",
+        },
+      },
     }),
   ]);
 

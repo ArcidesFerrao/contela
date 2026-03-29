@@ -102,6 +102,7 @@ export default function MenuAndStock({
                     stockQty={p.stockQty || 0}
                     unit={p.stockItem.unit?.name || ""}
                     key={p.id}
+                    critical={p.critical}
                   />
                 ))}
               </ul>

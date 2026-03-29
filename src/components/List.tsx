@@ -19,6 +19,7 @@ type ProductsStockProps = {
   stock: number;
   stockQty: number;
   unit: string;
+  critical?: number | null;
 };
 type ProductsProps = {
   id: string;
@@ -38,6 +39,7 @@ export const ListStockItem = ({
   name,
   price,
   stock,
+  critical,
 }: // stockQty,
 // unit,
 ProductsStockProps) => {
@@ -46,7 +48,7 @@ ProductsStockProps) => {
   const getStockIndicator = (stock: number) => {
     if (stock === 0)
       return { dot: "bg-red-500", text: "text-red-500", label: "Esgotado" };
-    if (stock <= 5)
+    if (stock <= (critical ?? 10))
       return {
         dot: "bg-amber-400",
         text: "text-amber-400",
