@@ -985,7 +985,7 @@ export const ServiceStockItemForm = ({
           <div className="flex flex-col gap-1">
             <label
               className="text-xs font-medium text-base-content/60"
-              htmlFor="criticalStock"
+              htmlFor="critical"
             >
               {st("criticalLevel")}{" "}
               <span className="font-normal text-base-content/40">
@@ -994,8 +994,8 @@ export const ServiceStockItemForm = ({
             </label>
             <input
               type="number"
-              name="criticalStock"
-              id="criticalStock"
+              name="critical"
+              id="critical"
               min={0}
               value={critical ?? ""}
               onChange={(e) =>

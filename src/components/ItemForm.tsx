@@ -449,7 +449,14 @@ export const CatalogItemForm = ({
 
   const calculatedCost = recipeItems.reduce((sum, ri) => {
     const unitCost = ri.cost ?? 0;
-    return sum + unitCost * ri.quantity;
+    if (ri.usageType === "QUANTITY") {
+      const costPerUnit =
+        ri.stockItem.unitQty > 0 ? unitCost / ri.stockItem.unitQty : unitCost;
+      // costPerUnit = sum + unitCost * ri.quantity * (ri.stockItem.unitQty || 1);
+      return sum + costPerUnit * ri.quantity;
+    } else {
+      return sum + unitCost * ri.quantity;
+    }
   }, 0);
 
   const margin =
