@@ -996,7 +996,7 @@ export const ServiceStockItemForm = ({
               type="number"
               name="critical"
               id="critical"
-              min={0}
+              // min={0}
               value={critical ?? ""}
               onChange={(e) =>
                 setCritical(e.target.value ? Number(e.target.value) : null)

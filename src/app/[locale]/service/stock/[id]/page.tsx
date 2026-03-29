@@ -49,7 +49,10 @@ export default async function StockItemPage(props: { params: Params }) {
   ]);
 
   const stockValue = (item?.stock ?? 0) * (item?.cost ?? 0);
-  const criticalMin = item?.critical ?? settings?.lowStockThreshold ?? 10;
+  const criticalMin =
+    item?.critical != null && item.critical != 0
+      ? item.critical
+      : (settings?.lowStockThreshold ?? 10);
   const currentStock = item?.stock ?? 0;
   const isLowStock = currentStock <= criticalMin;
   const stockPct = Math.min(
