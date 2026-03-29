@@ -721,6 +721,7 @@ export const ServiceStockItemForm = ({
   const [critical, setCritical] = useState<number | null>(
     stockItem?.critical ?? null,
   );
+  const [stock, setStock] = useState<number | 0>(stockItem?.stock ?? 0);
 
   // const [price, setPrice] = useState(stockItem?.price || 0);
   const [categories, setCategories] = useState<Category[]>();
@@ -968,7 +969,8 @@ export const ServiceStockItemForm = ({
               name="stock"
               id="stock"
               min={0}
-              defaultValue={stockItem?.stock || 0}
+              value={stock}
+              onChange={(e) => setStock(Number(e.target.value))}
               disabled={!!stockItem?.stock}
             />
             <p className="text-xs text-base-content/40">

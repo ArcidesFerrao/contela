@@ -55,13 +55,10 @@ export async function createServiceStockItem(prevState: unknown, formData: FormD
     const session = await auth()
     const rt = await getTranslations("Responses")
 
-    if (!session?.user) redirect("/login");
-    // if (!session?.user.supplyId) redirect("/register/supplier");
+    if (!session?.user.serviceId) redirect("/login");
     const submission = parseWithZod(formData, { schema: serviceStockItemSchema });
     if (submission.status !== "success") return submission.reply();
  
-    // console.log(session);
-    
     try {
         const values = submission.value;
         const existStockItem = await db.stockItem.findFirst({
@@ -84,38 +81,7 @@ export async function createServiceStockItem(prevState: unknown, formData: FormD
                 stockQty: values.unitQty * (values.stock || 0),
                 stockItemId: existStockItem.id,
                 status: "ACTIVE",
-                serviceId: values.serviceId,
-                critical: values.critical
-            },
-            include: {
-                service: true
-            }
-        })
-        } else {
-
-            const stockItem = await db.stockItem.create({
-                data: {
-                    name: values.name,
-                    description: values.description,
-                    price: values.price,
-                    unitQty: values.unitQty,
-                    unitId: values.unitId,
-                    categoryId: values.categoryId,
-                    cost: values.cost,
-                stock: values.stock,
-                status: "ACTIVE",
-                supplierId: "directPurchase",
-            },
-        });
-
-        const serviceStockItem = await db.serviceStockItem.create({
-            data: {
-                cost: values.cost,
-                stock: values.stock,
-                stockQty: values.unitQty * (values.stock || 0),
-                stockItemId: stockItem.id,
-                status: "ACTIVE",
-                serviceId: values.serviceId,
+                serviceId: session.user.serviceId,
                 critical: values.critical
             },
             include: {
@@ -136,9 +102,52 @@ export async function createServiceStockItem(prevState: unknown, formData: FormD
                 }
             }) 
         }
-    }
+        } else {
+            const stockItem = await db.stockItem.create({
+                data: {
+                    name: values.name,
+                    description: values.description,
+                    price: values.price,
+                    unitQty: values.unitQty,
+                    unitId: values.unitId,
+                    categoryId: values.categoryId,
+                    cost: values.cost,
+                    stock: values.stock,
+                    status: "ACTIVE",
+                    supplierId: "directPurchase",
+                },
+            });
 
-        return {status: "success"} satisfies SubmissionResult<string[]>
+            const serviceStockItem = await db.serviceStockItem.create({
+                data: {
+                    cost: values.cost,
+                    stock: values.stock,
+                    stockQty: values.unitQty * (values.stock || 0),
+                    stockItemId: stockItem.id,
+                    status: "ACTIVE",
+                    serviceId: values.serviceId,
+                    critical: values.critical
+                },
+                include: {
+                    service: true
+                }
+            })
+
+            if (values) {
+                await db.auditLog.create({
+                    data: {
+                        action: "CREATE",
+                        entityType: "ServiceStockItem",
+                        entityId: values.serviceId || "",
+                        entityName: serviceStockItem.service?.businessName || "",
+                        details: {
+                            metadata: values.name
+                        }
+                    }
+                }) 
+            }
+        }
+    return {status: "success"} satisfies SubmissionResult<string[]>
     } catch (error) {
         console.error("Failed to create Stock Item", error);
 
