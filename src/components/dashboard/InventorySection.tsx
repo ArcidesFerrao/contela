@@ -9,7 +9,7 @@ export async function InventorySection({ serviceId, userId, period }: Props) {
   const t = await getTranslations("Common");
 
   const [inventory, topItemsData] = await Promise.all([
-    getInventoryStats(serviceId, userId, period),
+    getInventoryStats(serviceId, userId),
     getTopItems(serviceId, userId, period),
   ]);
 

@@ -70,11 +70,7 @@ export default async function ServicePage({
         </Suspense>
 
         <Suspense fallback={<RecentActivitySkeleton />}>
-          <RecentActivitySection
-            serviceId={serviceId}
-            userId={userId}
-            period={period}
-          />
+          <RecentActivitySection serviceId={serviceId} userId={userId} />
         </Suspense>
       </div>
     </section>

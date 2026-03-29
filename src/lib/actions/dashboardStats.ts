@@ -757,13 +757,17 @@ export async function getProfitStats(serviceId: string, userId: string, period: 
 }
 
 // ─── 3. Inventory stats ────────────────────────────────────────────────────────
-export async function getInventoryStats(serviceId: string, userId: string, period: Period = "monthly") {
+export async function getInventoryStats(serviceId: string, userId: string) {
 
   return unstable_cache(
     async () => {
       const serviceStockItems = await db.serviceStockItem.findMany({
         where: { serviceId: serviceId },
-        include: { stockItem: true },
+        include: { stockItem: true, service: {
+            include: {
+                serviceSettings: true
+            }
+        } },
       });
 
       const inventoryValue = serviceStockItems.reduce((sum, item) => {
@@ -777,12 +781,12 @@ export async function getInventoryStats(serviceId: string, userId: string, perio
       );
 
       const lowStockItems = serviceStockItems.filter(
-        (item) => (item.stock || item.stock === 0) && item.stock < 10
+        (item) => (item.stock || item.stock === 0) && item.stock < ( item.critical != null && item.critical != 0 ? item.critical : (item.service.serviceSettings?.lowStockThreshold ?? 10))
       );
 
       return { inventoryValue, inventoryCount, lowStockItems, serviceStockItems };
     },
-    [`inventory-stats-${userId}-${period}`],
+    [`inventory-stats-${userId}`],
     { tags: [`dashboard-stats-${userId}`], revalidate: 60 }
   )();
 }
@@ -818,21 +822,21 @@ export async function getTopItems(serviceId: string, userId: string, period: Per
 }
 
 // ─── 5. Recent sales ───────────────────────────────────────────────────────────
-export async function getRecentSales(serviceId: string, userId: string, period: Period = "monthly") {
+export async function getRecentSales(serviceId: string, userId: string) {
 
   return unstable_cache(
     async () => {
-      const { startDate, endDate } = getDateRange(period);
+    //   const { startDate, endDate } = getDateRange(period);
 
       const recentSales = await db.sale.findMany({
-        where: { serviceId: serviceId, timestamp: { gte: startDate, lte: endDate } },
+        where: { serviceId: serviceId },
         orderBy: { timestamp: "desc" },
         take: 5,
       });
 
       return { recentSales };
     },
-    [`recent-sales-${userId}-${period}`],
+    [`recent-sales-${userId}`],
     { tags: [`dashboard-stats-${userId}`], revalidate: 60 }
   )();
 }

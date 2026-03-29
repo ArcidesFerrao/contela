@@ -1,15 +1,10 @@
 import { getRecentSales } from "@/lib/actions/dashboardStats";
 import { RecentActivity } from "@/components/RecentActivity";
-import { Period } from "@/types/types";
 
-type Props = { serviceId: string; userId: string; period: Period };
+type Props = { serviceId: string; userId: string };
 
-export async function RecentActivitySection({
-  serviceId,
-  userId,
-  period,
-}: Props) {
-  const data = await getRecentSales(serviceId, userId, period);
+export async function RecentActivitySection({ serviceId, userId }: Props) {
+  const data = await getRecentSales(serviceId, userId);
   if (!data) return null;
 
   return <RecentActivity sales={data.recentSales} />;
