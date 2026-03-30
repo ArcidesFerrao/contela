@@ -48,7 +48,7 @@ ProductsStockProps) => {
   const getStockIndicator = (stock: number) => {
     if (stock === 0)
       return { dot: "bg-red-500", text: "text-red-500", label: "Esgotado" };
-    if (stock <= (critical ?? 10))
+    if (stock <= (critical || 10))
       return {
         dot: "bg-amber-400",
         text: "text-amber-400",

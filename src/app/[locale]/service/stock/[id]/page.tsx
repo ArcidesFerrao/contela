@@ -68,6 +68,8 @@ export default async function StockItemPage(props: { params: Params }) {
   const unitName = item?.stockItem.unit?.name ?? "";
   const totalQty = item?.stockQty ?? 0;
 
+  // console.log({lowStockThreshold: settings.lowStockThreshold},"Stock item details:", {criticalMin})
+
   // Movement type config — maps StockChange enum to label + color
   const movementConfig: Record<string, { label: string; classes: string }> = {
     PURCHASE: {
