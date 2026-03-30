@@ -38,7 +38,7 @@ export default async function StockItemPage(props: { params: Params }) {
         },
         stockMovements: {
           orderBy: { timestamp: "desc" },
-          take: 5,
+          take: 4,
           include: {
             stockItem: true,
           },
@@ -173,7 +173,17 @@ export default async function StockItemPage(props: { params: Params }) {
             <p className="text-xs uppercase tracking-wider text-muted-foreground">
               {t("usedInRecipes")}
             </p>
-            <p className="text-lg font-semibold">{item?.RecipeItems.length}</p>
+            <div className="flex items-center gap-3 justify-between">
+              <p className="text-lg font-semibold">
+                {item?.RecipeItems.length}
+              </p>
+              <Link
+                href={`${id}/recipes`}
+                className="text-xs text-primary hover:underline"
+              >
+                {t("view")} ›
+              </Link>
+            </div>
           </div>
         </div>
         <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-1">

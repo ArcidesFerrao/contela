@@ -15,7 +15,7 @@ export async function StatisticsSection({ serviceId, userId, period }: Props) {
 
   const [profit, inventory] = await Promise.all([
     getProfitStats(serviceId, userId, period),
-    getInventoryStats(serviceId, userId, period),
+    getInventoryStats(serviceId, userId),
   ]);
 
   if (!profit || !inventory) return null;

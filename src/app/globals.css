@@ -494,8 +494,10 @@ fieldset div {
 }
 .header-menu a,
 .navigator a {
+  font-size: medium;
   border-radius: 0.2rem;
 }
+
 .navigator a {
   border: 1px solid var(--border);
 }
@@ -1002,6 +1004,7 @@ nav {
 .delete-button,
 .cancel-btn,
 .logout-button button,
+.header-menu button,
 .delivery-header a {
   padding: 0.4rem 1rem;
   border-radius: 0.2rem;
@@ -1015,6 +1018,7 @@ nav {
 .cancel-btn:hover,
 .delete-button:hover,
 .logout-button button:hover,
+.header-menu button:hover,
 .delivery-header a:hover {
   translate: 0 -2px;
   border-radius: 0;

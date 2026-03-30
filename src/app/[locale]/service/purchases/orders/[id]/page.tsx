@@ -19,6 +19,7 @@ export default async function OrderPage(props: { params: Params }) {
   const t = await getTranslations("Common");
   const ot = await getTranslations("Orders");
   const dt = await getTranslations("Delivery");
+  const st = await getTranslations("Status");
 
   const order = await db.order.findUnique({
     where: {
@@ -92,7 +93,7 @@ export default async function OrderPage(props: { params: Params }) {
               disabled
               className=" status-btn text-sm font-light text-center px-4 py-2 rounded-sm "
             >
-              {t(order.status.toLocaleLowerCase()).toUpperCase()}
+              {st(order.status.toLocaleLowerCase()).toUpperCase()}
             </button>
           )}
           {order?.status === "DELIVERED" ||
@@ -202,7 +203,7 @@ export default async function OrderPage(props: { params: Params }) {
                     disabled
                     className="text-sm font-light text-center max-h-fit"
                   >
-                    {t(
+                    {st(
                       order.delivery.status.toLocaleLowerCase(),
                     ).toLocaleUpperCase()}
                   </button>
