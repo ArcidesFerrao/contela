@@ -51,7 +51,7 @@ export const Header = () => {
         ) : !session?.user ? (
           ""
         ) : (
-          <p className="header-welcome text-sm">
+          <p className="header-welcome text-md">
             {t("greeting")},{" "}
             <Link href={`/${locale}/user/${session?.user.id}`}>
               {session?.user.name}

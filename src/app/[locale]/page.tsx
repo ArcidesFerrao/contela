@@ -1,11 +1,24 @@
 import DashMenu from "@/components/DashMenu";
 import { SignInButton } from "@/components/SignInButton";
 import authCheck from "@/lib/authCheck";
+import { db } from "@/lib/db";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
 export default async function Home() {
   const session = await authCheck();
+  const service = session?.user.serviceId
+    ? await db.service.findUnique({
+        where: { id: session?.user.serviceId ?? undefined },
+        select: { businessName: true },
+      })
+    : null;
+  const supplier = session?.user.supplierId
+    ? await db.supplier.findUnique({
+        where: { id: session?.user.supplierId ?? undefined },
+        select: { businessName: true },
+      })
+    : null;
   const t = await getTranslations("Common");
   const ht = await getTranslations("Hero");
 
@@ -20,6 +33,10 @@ export default async function Home() {
           <DashMenu
             isAdmin={session.user.isAdmin ?? false}
             role={session.user.role}
+            businessName={
+              (service?.businessName || supplier?.businessName) ??
+              "Your Business"
+            }
           />
         </div>
       ) : (

@@ -54,7 +54,7 @@ export default function DashMenu({
                   {businessName} · Vendas, stock e compras
                 </p>
               ) : (
-                <p className="text-sm font-light ">
+                <p className="text-sm font-light text-left">
                   Cria um perfil de fornecedor para começar
                 </p>
               )}
@@ -101,15 +101,26 @@ export default function DashMenu({
             </svg>
           </span>
           <div className="flex flex-col gap-1">
-            <div className="flex gap-2 items-center">
-              <p>{t("dashboardMenu2")}</p>
+            <div>
+              <div className="flex gap-2 items-center">
+                <p>{t("dashboardMenu2")}</p>
+                {role === "SUPPLIER" ? (
+                  <span className=" status-pill pill-active ">Activo</span>
+                ) : (
+                  <span className="status-pill pill-new">Não registado</span>
+                )}
+              </div>
               {role === "SUPPLIER" ? (
-                <span className=" status-pill pill-active ">Activo</span>
+                <p className="text-xs font-light ">
+                  {businessName} · Pedidos, stock e vendas
+                </p>
               ) : (
-                <span className="status-pill pill-new">Não registado</span>
+                <p className="text-xs font-light text-left ">
+                  Cria um perfil de fornecedor para começar
+                </p>
               )}
             </div>
-            <p className="text-sm font-light ">{businessName}</p>
+
             <div className="text-xs font-thin flex text-left flex-col gap-1 feature-row">
               <span className="flex gap-2 opacity-85 items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block" />
