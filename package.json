@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
-    "build": "prisma generate && next build --webpack",
+    "dev": "next dev --webpack  2>nul",
+    "build": "prisma generate && next build --webpack 2>nul",
     "start": "next start",
     "lint": "next lint"
   },
@@ -41,6 +41,7 @@
     "@types/pg": "^8.15.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.10.12",
     "eslint": "^9",
     "eslint-config-next": "15.4.3",
     "prisma": "^7.0.0",
