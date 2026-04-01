@@ -17,7 +17,7 @@ export default async function NotificationsPage() {
 
   return (
     <div className="notifications-page flex flex-col items-center p-4">
-      <div className="relative flex">
+      <div className="relative flex flex-col items-center ">
         <h1 className="text-xl font-semibold mb-4">{t("notifications")}</h1>
         {unreadCount > 0 && <MarkAsRead userId={session.user.id} />}
       </div>

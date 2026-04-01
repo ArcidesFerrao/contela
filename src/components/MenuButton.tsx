@@ -44,7 +44,7 @@ export const MenuButton = ({
           </div>
         </div>
       ) : (
-        <section className="header-menu absolute z-10 top-9  right-4 flex flex-col justify-between gap-5 p-4 h-full">
+        <section className="header-menu absolute z-10 top-9  right-4 flex flex-col justify-between gap-5 p-4 ">
           <div className="flex flex-col gap-5 ">
             <div className="header-navigator flex items-center gap-5">
               <p className="header-welcome text-wrap">

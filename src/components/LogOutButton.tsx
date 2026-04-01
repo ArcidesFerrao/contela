@@ -8,7 +8,11 @@ import Link from "next/link";
 export const LogOutButton = () => {
   const t = useTranslations("Common");
 
-  return <button onClick={() => signOut()}>{t("signOut")}</button>;
+  return (
+    <button className="logout" onClick={() => signOut()}>
+      {t("signOut")}
+    </button>
+  );
 };
 
 export const DashboardMenuLink = () => {
