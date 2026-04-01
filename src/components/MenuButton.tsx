@@ -4,15 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { HomeNavLink, NavLink } from "./NavLink";
-import { NotificationBell } from "./Bell";
+// import { NotificationBell } from "./Bell";
 import { LogOutButton } from "./LogOutButton";
 import { useTranslations } from "next-intl";
-import { LocaleSwitcher } from "./LocaleSwitches";
+// import { LocaleSwitcher } from "./LocaleSwitches";
 
 export const MenuButton = ({
   userId,
   userName,
-  count,
+  // count,
 }: {
   userId?: string | null;
   userName?: string | null;
@@ -26,22 +26,25 @@ export const MenuButton = ({
 
   const closeMenu = () => setShowMenu(false);
   return (
-    <div className="nav-menu-btn absolute z-10 top-9  right-4">
+    <>
       {!showMenu ? (
-        <div className="flex gap-3 items-center">
-          <div className="flex text-md items-center">
+        <div className="nav-menu-btn  ">
+          {/* <div className="nav-menu-btn absolute z-10 top-9  right-4"> */}
+          <div className="flex gap-3 items-center">
+            {/* <div className="flex text-md items-center">
             <LocaleSwitcher />
+            </div>
+            <NotificationBell locale={locale} count={count} /> */}
+            <button
+              onClick={() => setShowMenu(true)}
+              className="header-menu-btn flex items-center"
+            >
+              <span className="line-md--menu"></span>
+            </button>
           </div>
-          <NotificationBell locale={locale} count={count} />
-          <button
-            onClick={() => setShowMenu(true)}
-            className="header-menu-btn flex items-center"
-          >
-            <span className="line-md--menu"></span>
-          </button>
         </div>
       ) : (
-        <section className="header-menu flex flex-col justify-between gap-5 p-4 h-full">
+        <section className="header-menu absolute z-10 top-9  right-4 flex flex-col justify-between gap-5 p-4 h-full">
           <div className="flex flex-col gap-5 ">
             <div className="header-navigator flex items-center gap-5">
               <p className="header-welcome text-wrap">
@@ -161,6 +164,6 @@ export const MenuButton = ({
           <LogOutButton />
         </section>
       )}
-    </div>
+    </>
   );
 };

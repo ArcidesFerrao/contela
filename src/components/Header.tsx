@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MenuButton } from "./MenuButton";
 import { NotificationBell } from "./Bell";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 import { LocaleSwitcher } from "./LocaleSwitches";
 
@@ -15,7 +15,7 @@ export const Header = () => {
 
   const pathname = usePathname();
   const locale = pathname.split("/")[1] || "pt";
-  const t = useTranslations("Common");
+  // const t = useTranslations("Common");
 
   const [count, setCount] = useState(0);
 
@@ -51,16 +51,12 @@ export const Header = () => {
         ) : !session?.user ? (
           ""
         ) : (
-          <p className="header-welcome text-md">
-            {t("greeting")},{" "}
-            <Link href={`/${locale}/user/${session?.user.id}`}>
-              {session?.user.name}
-            </Link>
-          </p>
+          <Link href={`/${locale}/user/${session?.user.id}`}>
+            <span className="uil--user opacity-65"></span>
+          </Link>
         )}
         {session?.user && <NotificationBell locale={locale} count={count} />}
         <LocaleSwitcher />
-      </div>
       {showMenu && (
         <MenuButton
           count={count}
@@ -68,6 +64,7 @@ export const Header = () => {
           userName={session?.user.name}
         />
       )}
+      </div>
     </header>
   );
 };

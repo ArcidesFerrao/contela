@@ -186,8 +186,8 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* .header-greetings, */
   .add-product-dash,
-  .header-greetings,
   .navigator {
     display: none;
   }

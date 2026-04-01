@@ -5,10 +5,6 @@ import { NavLink, HomeNavLink } from "./NavLink";
 import { usePathname } from "next/navigation";
 
 export const Navigator = () => {
-  // const { locale } = useParams();
-
-  // const base = `/${locale}`;
-
   const pathname = usePathname();
   const base = pathname.split("/")[1] || "pt";
   return (
@@ -24,9 +20,6 @@ export const Navigator = () => {
 };
 
 export const ServiceNav = () => {
-  // const { locale } = useParams();
-
-  // const base = `/${locale}`;
   const t = useTranslations("Common");
 
   const pathname = usePathname();
@@ -47,9 +40,6 @@ export const ServiceNav = () => {
 };
 
 export const SupplyNav = () => {
-  // const { locale } = useParams();
-
-  // const base = `/${locale}`;
   const pathname = usePathname();
   const t = useTranslations("Common");
 
@@ -68,12 +58,10 @@ export const SupplyNav = () => {
 };
 
 export const AdminNav = () => {
-  // const { locale } = useParams();
   const pathname = usePathname();
   const base = pathname.split("/")[1] || "pt";
   const t = useTranslations("Common");
 
-  // const base = `/${locale}`;
   return (
     <nav className="navigator">
       <ul className="flex flex-col gap-2">
