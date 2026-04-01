@@ -45,25 +45,28 @@ export const Header = () => {
           <h1 className="font-bold text-2xl uppercase ">CONTELA</h1>
         </div>
       </Link>
-      <div className="header-greetings flex items-center gap-3">
+      <div className="header-greetings flex items-center gap-2">
+        <LocaleSwitcher />
         {status === "loading" ? (
           <span className="eos-icons--three-dots-loading"></span>
         ) : !session?.user ? (
           ""
         ) : (
-          <Link href={`/${locale}/user/${session?.user.id}`}>
+          <Link
+            className="user-header"
+            href={`/${locale}/user/${session?.user.id}`}
+          >
             <span className="uil--user opacity-65"></span>
           </Link>
         )}
         {session?.user && <NotificationBell locale={locale} count={count} />}
-        <LocaleSwitcher />
-      {showMenu && (
-        <MenuButton
-          count={count}
-          userId={session?.user.id}
-          userName={session?.user.name}
-        />
-      )}
+        {showMenu && (
+          <MenuButton
+            count={count}
+            userId={session?.user.id}
+            userName={session?.user.name}
+          />
+        )}
       </div>
     </header>
   );

@@ -19,7 +19,7 @@ export function LocaleSwitcher() {
 
   return (
     <button
-      className="font-thin text-xs px-2 py-1 border-(--foreground) opacity-75 hover:opacity-95 "
+      className=" text-xs px-1 py-1 border-(--foreground) opacity-65 hover:opacity-95 "
       onClick={switchLocale}
     >
       {nextLocale.toUpperCase()}

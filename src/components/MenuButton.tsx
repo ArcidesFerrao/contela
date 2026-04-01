@@ -28,7 +28,7 @@ export const MenuButton = ({
   return (
     <>
       {!showMenu ? (
-        <div className="nav-menu-btn  ">
+        <div className="nav-menu-btn opacity-65 hover:opacity-100 ">
           {/* <div className="nav-menu-btn absolute z-10 top-9  right-4"> */}
           <div className="flex gap-3 items-center">
             {/* <div className="flex text-md items-center">

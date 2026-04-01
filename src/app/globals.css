@@ -371,6 +371,20 @@ select {
   border-radius: 0;
 }
 
+.header-greetings a span {
+  transition: all 250ms ease-in;
+}
+.user-header {
+  height: 20px;
+}
+.header-greetings a {
+  transition: all 250ms ease-in;
+}
+.header-greetings a span:hover {
+  color: var(--foreground);
+  opacity: 100%;
+}
+
 .register-form {
   max-width: fit-content;
 }
@@ -491,6 +505,9 @@ fieldset div {
 .navigator a:active {
   background-color: #f4f5fa;
   color: #2f2f2f;
+}
+.header-menu a {
+  opacity: 0.8;
 }
 .header-menu a,
 .navigator a {
