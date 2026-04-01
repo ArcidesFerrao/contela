@@ -30,7 +30,9 @@ export const Header = () => {
 
   const showMenu =
     pathname?.startsWith(`/${locale}/supply`) ||
-    pathname?.startsWith(`/${locale}/service`);
+    pathname?.startsWith(`/${locale}/service`) ||
+    pathname?.startsWith(`/${locale}/notifications`) ||
+    pathname?.startsWith(`/${locale}/user`);
 
   return (
     <header className="flex justify-between p-4 items-center">
