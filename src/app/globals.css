@@ -84,6 +84,10 @@ body {
 }
 
 @media (max-width: 640px) {
+  .header-navigator,
+  .header-links a {
+    font-size: small !important;
+  }
   .item-form-details {
     flex-direction: column;
   }

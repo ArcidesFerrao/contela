@@ -46,9 +46,9 @@ export const MenuButton = ({
       ) : (
         <section className="header-menu absolute z-10 top-9  right-4 flex flex-col justify-between gap-5 p-4 ">
           <div className="flex flex-col gap-5 ">
-            <div className="header-navigator flex items-center gap-5">
+            <div className="header-navigator flex items-center justify-between gap-5">
               <p className="header-welcome text-wrap">
-                {t("greeting")},{" "}
+                {/* {t("greeting")},{" "} */}
                 <Link href={`/${locale}/${userId}`}>{userName}</Link>
               </p>
               <button
@@ -59,7 +59,7 @@ export const MenuButton = ({
               </button>
             </div>
             {pathname.startsWith(`/${locale}/supply`) && (
-              <ul className="flex flex-col gap-2">
+              <ul className="header-links flex flex-col gap-2 min-w-sm">
                 <HomeNavLink
                   href={`/${locale}/supply`}
                   onClick={() => setShowMenu(false)}
@@ -88,7 +88,7 @@ export const MenuButton = ({
               </ul>
             )}
             {pathname.startsWith(`/${locale}/service`) && (
-              <ul className="flex flex-col gap-2">
+              <ul className="header-links flex flex-col gap-2">
                 <HomeNavLink
                   href={`/${locale}/service`}
                   label={t("dashboard")}
@@ -127,7 +127,7 @@ export const MenuButton = ({
               </ul>
             )}
             {pathname.startsWith(`/${locale}/admin`) && (
-              <ul className="flex flex-col gap-2">
+              <ul className="header-links flex flex-col gap-2">
                 <HomeNavLink
                   href={`/${locale}/admin`}
                   label={t("dashboard")}
