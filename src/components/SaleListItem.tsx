@@ -57,11 +57,13 @@ export const SaleListItem = ({ sale }: { sale: SaleWithItems }) => {
             {/* <p className="text-sm font-light">{sale.paymentType}</p> */}
           </div>
         </div>
-        <div className="flex  gap-6 shrink-0">
+        <div className="flex flex-col md:flex-row gap-6 shrink-0">
           {/* Profit + margin bar */}
-          <div className="flex flex-col justify-end  gap-3 text-right">
-            <p className="text-xs font-light label-text">{t("grossProfit")}</p>
-            <div className="flex items-center gap-2 justify-end">
+          <div className="flex flex-col justify-end  gap-3 md:text-right">
+            <p className="text-xs font-light label-text text-left">
+              {t("grossProfit")}
+            </p>
+            <div className="flex items-center gap-2 justify-between md:justify-end">
               <p className="text-sm font-medium text-green-400 whitespace-nowrap">
                 MZN {profit.toFixed(2)}
               </p>

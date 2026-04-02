@@ -34,29 +34,29 @@ export default async function SalesPage({
     <div className="products-list flex flex-col gap-4 w-full">
       <div className="list-header sales-list-header flex items-center justify-between w-full">
         <div className="sales-title">
-          <h2 className="text-2xl font-medium">{t("recentSales")}</h2>
+          <h2 className="text-2xl font-bold">{t("recentSales")}</h2>
           <p className="text-md font-extralight">{st("subtitle")}</p>
         </div>
         <Link
           href={`/${locale}/service/sales/new`}
           className="add-product flex gap-1"
         >
-          <span className="text-md px-2">{st("newSale")}</span>
+          <span className="text-sm md:text-md px-2">{st("newSale")}</span>
         </Link>
       </div>
       <div className="flex justify-between">
         <div className="total-sales-title flex flex-col gap-2">
-          <p>{t("sales")}</p>
+          <h3>{t("sales")}</h3>
           <h4 className="text-xl font-bold">{sales.length}</h4>
         </div>
         <div className="flex flex-col gap-2">
-          <p>{st("totalRevenue")}</p>
+          <h3>{st("totalRevenue")}</h3>
           <h4 className="text-xl font-bold">
             MZN {sales.reduce((acc, sale) => acc + sale.total, 0).toFixed(2)}
           </h4>
         </div>
         <div className="flex flex-col gap-2">
-          <p>{t("grossProfit")}</p>
+          <h3>{t("grossProfit")}</h3>
           <h4 className="text-xl font-bold">
             MZN{" "}
             {(
@@ -66,7 +66,7 @@ export default async function SalesPage({
           </h4>
         </div>
         <div className="total-sales-title flex flex-col gap-2 max-w-50">
-          <p>{t("cogs")}</p>
+          <h3>{t("cogs")}</h3>
           <h4 className="text-xl font-bold">
             MZN {sales.reduce((acc, sale) => acc + sale.cogs, 0).toFixed(2)}
           </h4>
