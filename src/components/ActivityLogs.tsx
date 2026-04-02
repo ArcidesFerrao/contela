@@ -143,7 +143,7 @@ export function Logs({ logs }: { logs: ActivityLogsWithService[] }) {
           <option value="">{t("allTypes")}</option>
           {entityTypes.map((et) => (
             <option key={et} value={et}>
-              {et}
+              {t(et.toLowerCase()).toUpperCase()}
             </option>
           ))}
         </select>

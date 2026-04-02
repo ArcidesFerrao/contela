@@ -93,7 +93,7 @@ function ItemsTable({
       </div>
       <div className="flex flex-col gap-3 sm:hidden">
         {rows.map((row, i) => (
-          <div key={i} className="rounded-xl border border-base-content/10 p-3">
+          <div key={i} className="rounded-md border border-base-content/10 p-3">
             <p className="font-medium text-sm mb-2">{row[0]}</p>
 
             <div className="flex justify-between text-xs">
@@ -453,14 +453,14 @@ export const CreateDeliveryLogDetails = ({
         headers={[
           t("item"),
           t("orderedQty"),
-          t("deliveredQty"),
+          // t("deliveredQty"),
           t("unitPrice"),
         ]}
         rows={details.items.map((item) => [
           item.stockItem.name,
           item.orderedQty,
-          item.deliveredQty,
-          `MZN ${Number(item.price).toFixed(2)}`,
+          // item.deliveredQty,
+          `MZN ${Number(item.price * item.orderedQty).toFixed(2)}`,
         ])}
       />
     </div>
@@ -480,11 +480,16 @@ export const CreateOrderLogDetails = ({
 
   return (
     <ItemsTable
-      headers={[t("item"), t("qty"), t("unitPrice"), t("total")]}
+      headers={[
+        t("item"),
+        t("qty"),
+        // t("unitPrice"),
+        t("total"),
+      ]}
       rows={details.items.map((item) => [
         item.name,
         item.orderedQty,
-        `MZN ${Number(item.price).toFixed(2)}`,
+        // `MZN ${Number(item.price).toFixed(2)}`,
         `MZN ${(Number(item.price) * item.orderedQty).toFixed(2)}`,
       ])}
       footer={
@@ -509,11 +514,16 @@ export const CreateSaleLogDetails = ({
 
   return (
     <ItemsTable
-      headers={[t("item"), t("qty"), t("unitPrice"), t("total")]}
+      headers={[
+        t("item"),
+        t("qty"),
+        // t("unitPrice"),
+        t("total"),
+      ]}
       rows={details.items.map((i) => [
         i.name,
         i.quantity,
-        `MZN ${Number(i.price).toFixed(2)}`,
+        // `MZN ${Number(i.price).toFixed(2)}`,
         `MZN ${(Number(i.price) * i.quantity).toFixed(2)}`,
       ])}
       footer={
@@ -538,11 +548,16 @@ export const CreatePurchaseLogDetails = ({
     );
   return (
     <ItemsTable
-      headers={[t("item"), t("qty"), t("unitCost"), t("total")]}
+      headers={[
+        t("item"),
+        t("qty"),
+        // t("unitCost"),
+        t("total"),
+      ]}
       rows={details.items.map((i) => [
         i.name,
         i.quantity,
-        `MZN ${Number(i.price).toFixed(2)}`,
+        // `MZN ${Number(i.price).toFixed(2)}`,
         `MZN ${(Number(i.price) * i.quantity).toFixed(2)}`,
       ])}
       footer={
