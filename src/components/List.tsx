@@ -500,10 +500,10 @@ export const ExpenseListItem = ({ expense }: { expense: Expense }) => {
         className="sale-header flex justify-between"
       >
         <div className="expense-title flex  flex-col gap-1 justify-between">
-          <h3 className="flex gap-2 items-center text-lg font-medium">
-            {et("expense")}:
+          <div className="flex gap-2 items-center ">
+            <h3 className="text-lg font-medium">{et("expense")}:</h3>
             <p className="text-sm font-light ">{expense.description}</p>
-          </h3>
+          </div>
           <div className="expense-title-details flex gap-4">
             <p className="text-xs font-light">
               {expense.timestamp.toLocaleDateString(undefined, {

@@ -92,28 +92,28 @@ export default async function ExpensesPage({
     <div className="products-list flex flex-col gap-4 w-full">
       <div className="list-header expense-list-header flex items-center justify-between w-full">
         <div className="sales-title">
-          <h2 className="text-2xl font-medium">{et("title")}</h2>
+          <h2 className="text-2xl font-bold">{et("title")}</h2>
           <p className="text-md font-extralight">{et("subtitle")}</p>
         </div>
         <Link
           href={`/${locale}/service/expenses/new`}
-          className="add-product flex gap-1"
+          className="add-product flex gap-1 self-end"
         >
-          <span className="text-md px-2">{et("newExpense")}</span>
+          <span className="text-sm md:text-md px-2">{et("newExpense")}</span>
         </Link>
       </div>
 
       <div className="total-expense-info flex justify-between py-2">
         <div className="total-expense-title flex flex-col gap-2">
-          <p>{t("expenses")}</p>
+          <h3>{t("expenses")}</h3>
           <h4 className="text-xl font-bold">{filteredExpenses.length}</h4>
         </div>
         <div className="total-expense-title flex flex-col gap-2">
-          <p>{t("totalSpent")}</p>
+          <h3>{t("totalSpent")}</h3>
           <h4 className="text-xl font-bold">MZN {totalAmount.toFixed(2)}</h4>
         </div>
         <div className="total-expense-title flex flex-col gap-2">
-          <p>{et("avgExpense")}</p>
+          <h3>{et("avgExpense")}</h3>
           <h4 className="text-xl font-bold">MZN {averageExpense.toFixed(2)}</h4>
         </div>
       </div>
