@@ -45,19 +45,19 @@ export default async function UserPage(props: { params: Params }) {
     <section className="user-page flex flex-col gap-5">
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-2">
-          <h2 className="text-3xl font-semibold">{user.name}</h2>
+          <h2 className=" font-semibold  ">{user.name}</h2>
           <p className="text-xs font-extralight">
-            {t("userId")}: {id}...{" "}
+            {t("userId")}: {id.slice(0, 6)}...{" "}
           </p>
         </div>
         <div className="logout-button flex flex-col gap-2">
-          <div className="flex items-center gap-2 justify-end">
-            {user.role === "SERVICE" && <ServiceLink />}
-            {user.role === "SUPPLIER" && <SupplierLink />}
-            {user.role === "ADMIN" && <AdminLink />}
-            <LogOutButton />
-          </div>
-          <DashboardMenuLink />
+          {/* <div className="flex items-center gap-2 justify-end"> */}
+          {user.role === "SERVICE" && <ServiceLink />}
+          {user.role === "SUPPLIER" && <SupplierLink />}
+          {user.role === "ADMIN" && <AdminLink />}
+          <LogOutButton />
+          {/* </div> */}
+          {/* <DashboardMenuLink /> */}
         </div>
       </div>
       <UserProfile user={user} />

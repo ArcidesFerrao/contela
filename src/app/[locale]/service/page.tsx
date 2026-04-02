@@ -36,9 +36,9 @@ export default async function ServicePage({
   const { serviceId, id: userId } = session.user;
 
   return (
-    <section className="flex flex-col gap-4 w-full">
+    <section className="flex flex-col w-full">
       <div className="dash-header flex items-center gap-2 justify-between">
-        <h1 className="text-2xl font-semibold">{session.user.name}</h1>
+        <h1 className="font-semibold">{session.user.name}</h1>
         <DateFilter currentPeriod={period} />
       </div>
 

@@ -25,7 +25,7 @@ export default function DashMenu({
         onClick={() => redirect("/service")}
         className={`p-4 flex items-center gap-12 rounded-md ${role !== "SERVICE" && role !== "ADMIN" && "opacity-40"}`}
       >
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 w-full">
           <span className="p-2 pill-active h-fit rounded-lg">
             <svg
               width="32"
@@ -41,7 +41,7 @@ export default function DashMenu({
           </span>
           <div className="flex flex-col gap-1">
             <div>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center text-left">
                 <p>{t("dashboardMenu1")}</p>
                 {role === "SERVICE" ? (
                   <span className=" status-pill pill-active ">Activo</span>

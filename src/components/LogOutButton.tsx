@@ -9,7 +9,7 @@ export const LogOutButton = () => {
   const t = useTranslations("Common");
 
   return (
-    <button className="logout" onClick={() => signOut()}>
+    <button className="logout sm:text-sm md:text-md" onClick={() => signOut()}>
       {t("signOut")}
     </button>
   );
@@ -32,7 +32,7 @@ export const ServiceLink = () => {
 
   return (
     <Link
-      className="menu-active-hover pill-active px-3 py-2 rounded-lg "
+      className="menu-active-hover pill-active px-3 py-2 rounded-lg flex justify-center "
       href={`/${locale}/service`}
     >
       {/* <span className=" pill-active  rounded-lg h-fit w-fit"> */}
@@ -58,7 +58,7 @@ export const SupplierLink = () => {
 
   return (
     <Link
-      className="menu-active-hover pill-active px-3 py-2 rounded-lg"
+      className="menu-active-hover pill-active px-3 py-2 rounded-lg flex justify-center "
       href={`/${locale}/supply`}
     >
       {/* <span className="p-2 pill-active h-fit rounded-lg"> */}
@@ -86,7 +86,7 @@ export const AdminLink = () => {
 
   return (
     <Link
-      className="menu-active-hover pill-active px-3 py-2 rounded-lg"
+      className="menu-active-hover pill-active px-3 py-2 rounded-lg flex justify-center "
       href={`/${locale}/admin`}
     >
       <span>{t("adminDashboard")}</span>

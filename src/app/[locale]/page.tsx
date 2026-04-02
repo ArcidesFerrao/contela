@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <main className="home-dash flex flex-col items-center gap-4 py-5">
       {session?.user ? (
-        <div className="flex flex-col items-center gap-4 py-16 px-4">
+        <div className="flex flex-col items-center gap-4 py-16  sm:px-0 md:px-4">
           <h1 className="text-2xl font-semibold text-center">
             {t("greetings")}
           </h1>

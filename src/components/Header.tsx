@@ -35,7 +35,7 @@ export const Header = () => {
     pathname?.startsWith(`/${locale}/user`);
 
   return (
-    <header className="flex justify-between p-4 items-center">
+    <header className="flex justify-between py-4  items-center sm:px-0 md:px-4">
       <Link href={`/${locale}`}>
         <div className="innovante flex gap-2 items-center ">
           <Image
