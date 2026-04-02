@@ -142,7 +142,7 @@ export function SelectExport({
     <div className="settings-section flex flex-col gap-4 p-4">
       <h3 className="text-lg font-normal ">{et("dataExport")}</h3>
       <div className="flex flex-col gap-2">
-        <div className="flex justify-between">
+        <div className="flex items-center gap-2 justify-between">
           <h4>{et("recordType")}</h4>
           <select
             name="range"
@@ -174,11 +174,11 @@ export function SelectExport({
           <option value="logs">{et("logsReport")}</option>
         </select>
 
-        <button onClick={handleExport}>
+        <button className="text-xs font-normal" onClick={handleExport}>
           {isExporting ? lt("exporting") : et("dataExport")}
         </button>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1 mt-2">
           <h3>{selectedExportOption?.label}</h3>
           <p className="font-thin text-sm">
             {selectedExportOption?.description}

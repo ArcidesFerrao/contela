@@ -35,15 +35,15 @@ export default async function SettingsPage() {
         <div className="settings-section flex flex-col gap-2 p-4">
           <h3 className="text-lg font-normal">{sert("serviceInfo")}</h3>
           <div className="flex flex-col gap=2">
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
               <h4 className="font-medium">{t("name")}: </h4>
               <p>{session.user.name}</p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
               <h4 className="font-medium">Email: </h4>
               <p>{session.user.email}</p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
               <h4 className="font-medium">{t("phoneNumber")}: </h4>
               <p>{session.user.phoneNumber}</p>
             </div>
@@ -57,7 +57,7 @@ export default async function SettingsPage() {
         <ExportData serviceId={serviceId} />
       </div>
       <div className="settings-note p-3 border">
-        <p className="text-sm">{st("settingsNote")}</p>
+        <p className="text-xs md:text-sm ">{st("settingsNote")}</p>
       </div>
     </section>
   );

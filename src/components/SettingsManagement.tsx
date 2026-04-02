@@ -68,15 +68,10 @@ export function SettingsManagement({
 
   return (
     <div className="settings-section flex flex-col gap-2 p-4">
-      <div className="flex justify-between">
-        <h3 className="text-lg font-normal">{sert("inventoryManagement")}</h3>
-        <button type="button" onClick={handleSaveSettings}>
-          {isSaving ? t("saving") : st("saveSettings")}
-        </button>
-      </div>
+      <h3 className="text-lg font-normal">{sert("inventoryManagement")}</h3>
       <div className="flex justify-between">
         <div>
-          <p>{st("negativeStock")}</p>
+          <h4>{st("negativeStock")}</h4>
           <p className="font-thin text-sm">{st("negativeStockDetail")}</p>
         </div>
         <ToggleSwitch
@@ -86,7 +81,7 @@ export function SettingsManagement({
       </div>
       <div className="flex justify-between">
         <div>
-          <p>{st("lowStock")}</p>
+          <h4>{st("lowStock")}</h4>
           <p className="font-thin text-sm">{st("lowStockDetail")}</p>
         </div>
         <input
@@ -100,9 +95,16 @@ export function SettingsManagement({
               value: parseInt(e.target.value),
             })
           }
-          className="max-w-25"
+          className="max-w-25 h-fit"
         />
       </div>
+      <button
+        className="text-xs font-normal"
+        type="button"
+        onClick={handleSaveSettings}
+      >
+        {isSaving ? t("saving") : st("saveSettings")}
+      </button>
     </div>
   );
 }
