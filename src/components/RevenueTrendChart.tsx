@@ -112,7 +112,8 @@ export default function RevenueTrendChart({ data }: RevenueTrendChartProps) {
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
+        // maintainAspectRatio: true,
         interaction: {
           mode: "index",
           intersect: false,
@@ -154,37 +155,41 @@ export default function RevenueTrendChart({ data }: RevenueTrendChartProps) {
         },
         scales: {
           x: {
-            grid: { color: gridColor },
+            // grid: { color: gridColor },
+            grid: { display: false },
             ticks: {
               color: tickColor,
-              font: { size: 11 },
-              maxTicksLimit: 10,
+              font: { size: 10 },
+              // maxTicksLimit: 10,
+              maxTicksLimit: 5,
             },
             border: { display: false },
           },
           y: {
-            grid: { color: gridColor },
-            ticks: {
-              color: tickColor,
-              font: { size: 11 },
-              callback: (v) =>
-                "MZN " +
-                (Number(v) >= 1000 ? (Number(v) / 1000).toFixed(1) + "k" : v),
-            },
+            grid: { display: false },
+            // grid: { color: gridColor },
+            // ticks: {
+            //   color: tickColor,
+            //   font: { size: 11 },
+            //   callback: (v) =>
+            //     "MZN " +
+            //     (Number(v) >= 1000 ? (Number(v) / 1000).toFixed(1) + "k" : v),
+            // },
             border: { display: false },
           },
           // Second Y axis for order counts — only registered when in order mode
           ...(isOrderMode
             ? {
                 y2: {
-                  position: "right" as const,
-                  grid: { drawOnChartArea: false },
-                  ticks: {
-                    color: tickColor,
-                    font: { size: 11 },
-                    precision: 0,
-                  },
-                  border: { display: false },
+                  grid: { display: false },
+                  // position: "right" as const,
+                  // grid: { drawOnChartArea: false },
+                  // ticks: {
+                  //   color: tickColor,
+                  //   font: { size: 11 },
+                  //   precision: 0,
+                  // },
+                  // border: { display: false },
                 },
               }
             : {}),
@@ -198,7 +203,5 @@ export default function RevenueTrendChart({ data }: RevenueTrendChartProps) {
   }, [data]);
 
   if (!data?.length) return null;
-  return (
-      <canvas ref={canvasRef} />
-  );
+  return <canvas ref={canvasRef} style={{ height: "120px" }} />;
 }

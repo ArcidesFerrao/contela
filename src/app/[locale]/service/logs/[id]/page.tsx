@@ -95,7 +95,7 @@ export default async function LogPage(props: { params: Params }) {
       {/* Meta card */}
       <div className="stats p-4 flex flex-col gap-5">
         {/* Row 1: action + entity + severity */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div className="flex flex-col gap-2">
             <p className="label-text text-xs uppercase tracking-wide">
               {at("actionType")}
@@ -130,7 +130,7 @@ export default async function LogPage(props: { params: Params }) {
         {/* <div className="h-px bg-base-content/10" /> */}
 
         {/* Row 2: description + timestamp */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div className="col-span-2 flex flex-col gap-2">
             <p className="label-text text-xs uppercase tracking-wide">
               {t("description")}

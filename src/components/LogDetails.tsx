@@ -48,47 +48,79 @@ function ItemsTable({
   rows: React.ReactNode[][];
   footer?: React.ReactNode;
 }) {
+  const t = useTranslations("Common");
   return (
-    <div className="flex flex-col gap-0">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="border-b border-base-content/10">
-            {headers.map((h, i) => (
-              <th
-                key={h}
-                className={`py-2 text-xs font-medium text-base-content/40 uppercase tracking-wide pr-4 last:pr-0 ${
-                  i > 0 ? "text-right" : "text-left"
-                }`}
-              >
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, i) => (
-            <tr
-              key={i}
-              className="border-b border-base-content/10 last:border-0"
-            >
-              {row.map((cell, j) => (
-                <td
-                  key={j}
-                  className={`py-2.5 font-light pr-4 last:pr-0 ${j > 0 ? "text-right" : ""}`}
+    <>
+      <div className=" flex-col gap-0 hidden sm:flex">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-base-content/10">
+              {headers.map((h, i) => (
+                <th
+                  key={h}
+                  className={`py-2 text-xs font-medium text-base-content/40 uppercase tracking-wide pr-4 last:pr-0 ${
+                    i > 0 ? "text-right" : "text-left"
+                  }`}
                 >
-                  {cell}
-                </td>
+                  {h}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-      {footer && (
-        <div className="flex justify-end pt-2.5 border-t border-base-content/10 mt-1">
-          {footer}
-        </div>
-      )}
-    </div>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr
+                key={i}
+                className="border-b border-base-content/10 last:border-0"
+              >
+                {row.map((cell, j) => (
+                  <td
+                    key={j}
+                    className={`py-2.5 font-light pr-4 last:pr-0 ${j > 0 ? "text-right" : ""}`}
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {footer && (
+          <div className="flex justify-end pt-2.5 border-t border-base-content/10 mt-1">
+            {footer}
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col gap-3 sm:hidden">
+        {rows.map((row, i) => (
+          <div key={i} className="rounded-xl border border-base-content/10 p-3">
+            <p className="font-medium text-sm mb-2">{row[0]}</p>
+
+            <div className="flex justify-between text-xs">
+              <h3 className="text-base-content/50 font-thin">
+                {t("quantity")}
+              </h3>
+              <span>{row[1]}</span>
+            </div>
+
+            {/* <div className="flex justify-between text-xs">
+              <h3 className="text-base-content/50 font-thin">{t("price")}</h3>
+              <span>{row[2]}</span>
+            </div> */}
+
+            <div className="flex justify-between text-sm font-medium mt-1">
+              <span>Total</span>
+              <span>{row[2]}</span>
+            </div>
+          </div>
+        ))}
+        {footer && (
+          <p className="flex justify-end pt-2 border-t border-base-content/10">
+            {footer}
+          </p>
+        )}
+      </div>
+    </>
   );
 }
 
@@ -327,11 +359,16 @@ export const ConfirmedDeliveryLogDetails = ({
       </DetailTable>
       {details.deliveryItems && (
         <ItemsTable
-          headers={[t("item"), t("qty"), t("unitPrice"), t("total")]}
+          headers={[
+            t("item"),
+            t("qty"),
+            // t("unitPrice"),
+            t("total"),
+          ]}
           rows={details.deliveryItems.map((item) => [
             item.orderItem.stockItem.name,
             item.quantity,
-            `MZN ${Number(item.orderItem.price).toFixed(2)}`,
+            // `MZN ${Number(item.orderItem.price).toFixed(2)}`,
             `MZN ${(Number(item.orderItem.price) * item.quantity).toFixed(2)}`,
           ])}
           footer={
