@@ -73,7 +73,7 @@ export default async function ExpensePage(props: { params: Params }) {
           <p className="label-text text-xs uppercase tracking-wide mb-1">
             {t("expenseAmount")}
           </p>
-          <p className="text-3xl font-medium text-red-400">
+          <p className="text-xl md:text-3xl font-medium text-red-400 text-nowrap">
             − MZN {item.amount.toFixed(2)}
           </p>
         </div>
@@ -93,7 +93,7 @@ export default async function ExpensePage(props: { params: Params }) {
           <p className="label-text text-xs uppercase tracking-wide">
             {t("details")}
           </p>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="flex flex-col gap-1">
               <p className="text-xs text-base-content/50">{t("category")}</p>
               <p className="text-sm font-medium">
