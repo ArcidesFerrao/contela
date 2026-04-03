@@ -107,16 +107,19 @@ body {
       flex-direction: row !important;
     }
   }
+
   .order-summary {
     width: 100%;
   }
+
+  /* .sale-title-details */
   .sales-amount,
   .sales-content,
-  /* .sale-title-details */
   .purchase-title-details {
     flex-direction: column;
     gap: 1rem;
   }
+
   .total-sales-title,
   .purchase-total,
   .order-items-data,
