@@ -37,7 +37,7 @@ export default async function PurchasesPage() {
     <div className="flex flex-col gap-5 w-full">
       <div className="list-header flex items-center justify-between w-full">
         <div className="list-title">
-          <h2 className="text-2xl font-medium">{purchasesT("title")}</h2>
+          <h2 className="text-2xl font-bold">{purchasesT("title")}</h2>
           <p className="text-md font-extralight">{purchasesT("subtitle")}</p>
         </div>
       </div>

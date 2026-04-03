@@ -79,7 +79,7 @@ export default function PurchasesAndOrders({
       <div className="header-p-o flex justify-between">
         <div className="toggle-buttons flex">
           <button
-            className={`flex items-center gap-2 px-4 py-2 text-xl ${
+            className={`flex items-center gap-2 px-4 py-2  ${
               view === "purchases" && "toggled border-b-2"
             }`}
             onClick={() => setView("purchases")}
@@ -87,7 +87,7 @@ export default function PurchasesAndOrders({
             <span className="roentgen--bag"></span> {t("purchases")}
           </button>
           <button
-            className={` flex items-center gap-2 px-4 py-2 text-xl ${
+            className={` flex items-center gap-2 px-4 py-2  ${
               view === "orders" && "toggled border-b-2"
             }`}
             onClick={() => setView("orders")}
@@ -95,16 +95,13 @@ export default function PurchasesAndOrders({
             <span className="flowbite--cart-solid"></span> {t("orders")}
           </button>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="text-sm md:text-md flex gap-2 items-center">
           {view === "orders" && (
             <Link
               href={`/${locale}/service/purchases/orders/new`}
               className="add-product flex gap-1"
             >
-              <span className="text-md px-2 flex items-center gap-2">
-                <span className="flowbite--cart-solid"></span>
-                {ot("newOrder")}
-              </span>
+              {ot("newOrder")}
             </Link>
           )}
           {view === "purchases" && (
@@ -112,10 +109,7 @@ export default function PurchasesAndOrders({
               href={`/${locale}/service/purchases/new`}
               className="add-product purchase-btn flex gap-1"
             >
-              <span className="text-md px-2 flex items-center gap-2">
-                <span className="roentgen--bag"></span>
-                {pt("newPurchase")}
-              </span>
+              {pt("newPurchase")}
             </Link>
           )}
         </div>
@@ -125,18 +119,18 @@ export default function PurchasesAndOrders({
         <div className="purchase-list flex flex-col gap-5">
           <div className="purchases-data flex justify-between w-full">
             <div className="purchase-total">
-              <p>{pt("totalPurchases")}</p>
-              <h2 className="text-2xl font-semibold">{purchaseCount}</h2>
+              <h3>{pt("totalPurchases")}</h3>
+              <p className="text-xl font-semibold">{purchaseCount}</p>
             </div>
             <div>
-              <p>{pt("totalSpent")}</p>
-              <h4 className="text-2xl font-semibold">
+              <h3>{pt("totalSpent")}</h3>
+              <p className="text-xl font-semibold">
                 MZN {purchases.reduce((acc, sale) => acc + sale.total, 0)}.00
-              </h4>
+              </p>
             </div>
             <div>
-              <p>{pt("itemsPurchased")}</p>
-              <h2 className="text-2xl font-semibold">{totalPurchasedItems}</h2>
+              <h3>{pt("itemsPurchased")}</h3>
+              <p className="text-xl font-semibold">{totalPurchasedItems}</p>
             </div>
           </div>
           {purchases.length === 0 ? (
