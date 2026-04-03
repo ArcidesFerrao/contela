@@ -148,22 +148,22 @@ export default function PurchasesAndOrders({
         <div className="orders-list flex flex-col gap-5">
           <div className="orders-data flex justify-between">
             <div className="flex flex-col ">
-              <p>{t("orders")}</p>
-              <h2 className="text-2xl font-semibold">{orderCount}</h2>
+              <h3>{t("orders")}</h3>
+              <p className="text-xl font-semibold">{orderCount}</p>
             </div>
             <div className="flex flex-col ">
-              <p>{pt("totalOrderedItems")}</p>
-              <h2 className="text-2xl font-semibold">{totalOrderedItems}</h2>
+              <h3>{pt("totalOrderedItems")}</h3>
+              <p className="text-xl font-semibold">{totalOrderedItems}</p>
             </div>
             <div className="flex flex-col text-end">
-              <p>{pt("totalOrdersValue")}</p>
-              <h4 className="text-2xl font-semibold">
+              <h3>{pt("totalOrdersValue")}</h3>
+              <p className="text-xl font-semibold">
                 MZN{" "}
                 {orders
                   .filter((so) => so.status !== "CANCELLED")
                   .reduce((acc, sale) => acc + sale.total, 0)}
                 .00
-              </h4>
+              </p>
             </div>
           </div>
 

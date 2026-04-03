@@ -92,12 +92,12 @@ export const PurchasesList = ({
                 <div className="flex flex-col justify-between gap-2">
                   <h3 className="font-semibold ">{item.stockItem.name}</h3>
                   <label
-                    className="flex gap-2 text-sm items-center"
+                    className="flex gap-2 text-xs items-center"
                     htmlFor="price"
                   >
                     {t("price")}:{" "}
                     <input
-                      className="max-w-20 text-xs"
+                      className="max-w-20 text-xs w-fit"
                       type="number"
                       value={item.price ?? ""}
                       onChange={(e) =>

@@ -38,12 +38,14 @@ export default async function NewOrder({
     <>
       <div className="sales-section flex flex-col gap-5 w-full">
         <div className="list-header flex items-center justify-between w-full">
-          <h2 className="text-2xl font-bold">{st("suppliersList")}</h2>
+          <h2 className="text-xl md:text-2xl font-bold">
+            {st("suppliersList")}
+          </h2>
           <Link
             href={`/${locale}/service/purchases`}
             className="cancel-btn add-product flex"
           >
-            <span className="text-md px-2">{t("cancel")}</span>
+            <span className="text-sm md:text-md px-2">{t("cancel")}</span>
           </Link>
         </div>
         {suppliers.length > 0 ? (
