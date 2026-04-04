@@ -106,7 +106,7 @@ export default function UserProfile({ user }: { user: UserProfile }) {
       {view === "detail" && (
         <>
           {user.role === "SUPPLIER" && user.Supplier && (
-            <div className="details-section flex gap-5 justify-between">
+            <div className="details-section flex flex-col md:flex-row gap-5 justify-between">
               <div className=" flex flex-col gap-2">
                 <div className="flex flex-col">
                   <p>{supt("companyName")}</p>
@@ -164,7 +164,7 @@ export default function UserProfile({ user }: { user: UserProfile }) {
           {user.role === "SERVICE" && user.Service && (
             <div className="details-section flex flex-col gap-2">
               <h3>{t("businessInformation")}</h3>
-              <div className=" flex gap-5">
+              <div className=" flex flex-col md:flex-row gap-5">
                 <div className="flex flex-col justify-between gap-2">
                   <div className="flex flex-col">
                     <p>{supt("companyName")}</p>
