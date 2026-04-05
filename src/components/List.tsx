@@ -450,7 +450,7 @@ export const DashSaleListItem = ({ sale }: { sale: Sale }) => {
     >
       <div className="sale-header flex justify-between">
         <div className="sale-title flex flex-col gap-2">
-          <h3 className="flex gap-2 items-center ">
+          <h3 className="flex gap-2">
             {st("sale")}
             <p className="text-sm font-light ">#{sale.id.slice(0, 6)}...</p>
           </h3>

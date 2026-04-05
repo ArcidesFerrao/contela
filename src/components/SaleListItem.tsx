@@ -25,7 +25,7 @@ export const SaleListItem = ({ sale }: { sale: SaleWithItems }) => {
         onClick={() => setOpen((o) => !o)}
       >
         <div className="sale-title flex flex-col items-start gap-2">
-          <h3 className="flex flex-col gap-1  text-xl font-medium">
+          <h3 className="flex flex-col gap-1  text-xl font-medium text-start">
             {st("sale")}
             <p className="text-xs font-light ">#{sale.id.slice(0, 6)}...</p>
           </h3>

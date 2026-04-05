@@ -49,12 +49,15 @@ export default async function NewSale({
   return (
     <div className="sales-section flex flex-col gap-5 w-full">
       <div className="list-header flex items-center justify-between w-full">
-        <h2 className="text-2xl font-bold">{t("catalogItems")}</h2>
+        <h2 className="sm:text-xl md:text-2xl font-bold">
+          {t("catalogItems")}
+        </h2>
         <Link
           href={`/${locale}/service/sales`}
-          className="add-product flex gap-1"
+          className="text-sm px-2 flex gap-1 cancel-btn "
         >
-          <span className="text-md px-2">{t("cancel")}</span>
+          {t("cancel")}
+          {/* <span className="text-sm px-2 "></span> */}
         </Link>
       </div>
       <div className="sales-content flex justify-between gap-4">

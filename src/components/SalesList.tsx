@@ -166,7 +166,7 @@ export const SalesList = ({ initialItems, serviceId }: SaleProductsProps) => {
 
   return (
     <>
-      <div className="products-selection flex flex-col gap-4 w-full p-4">
+      <div className="products-selection flex flex-col gap-4 w-full p-2 md:p-4">
         <div className="flex flex-col">
           <h3 className="text-md font-medium underline py-2">{t("list")}</h3>
           <ul>
@@ -174,7 +174,7 @@ export const SalesList = ({ initialItems, serviceId }: SaleProductsProps) => {
               return (
                 <li
                   key={item.id}
-                  className={`${item.quantity === 0 ? "" : "product-selected"} grid grid-cols-[1fr_auto_auto] items-center gap-4 py-2`}
+                  className={`${item.quantity === 0 ? "" : "product-selected"} grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] items-center justify-between gap-4 py-2`}
                 >
                   <div className="flex flex-col">
                     <h3 className="text-sm truncate">{item.name}</h3>
@@ -184,7 +184,7 @@ export const SalesList = ({ initialItems, serviceId }: SaleProductsProps) => {
                   </div>
 
                   {/* <div className="sales-amount flex gap-2 items-center max-w-6/12"> */}
-                  <div className="amount-btn flex items-center min-w-fit">
+                  <div className="amount-btn flex items-center w-fit">
                     <button
                       className="px-3 py-1"
                       onClick={() => handleDecrement(item.id)}
@@ -200,7 +200,7 @@ export const SalesList = ({ initialItems, serviceId }: SaleProductsProps) => {
                     </button>
                   </div>
                   {/* </div> */}
-                  <span className="w-28 text-right text-xs ">
+                  <span className="w-28 text-right text-xs hidden md:block ">
                     <p>
                       {item.quantity === 0
                         ? "—"
