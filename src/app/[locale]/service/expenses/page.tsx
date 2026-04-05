@@ -90,20 +90,20 @@ export default async function ExpensesPage({
 
   return (
     <div className="products-list flex flex-col gap-4 w-full">
-      <div className="list-header expense-list-header flex items-center justify-between w-full">
+      <div className="list-header expense-list-header flex md:items-center justify-between w-full flex-col md:flex-row gap-2">
         <div className="sales-title">
           <h2 className="text-2xl font-bold">{et("title")}</h2>
-          <p className="text-md font-extralight">{et("subtitle")}</p>
+          <p className="text-sm md:text-md font-extralight">{et("subtitle")}</p>
         </div>
         <Link
           href={`/${locale}/service/expenses/new`}
-          className="add-product flex gap-1 self-end"
+          className="add-product flex gap-1 w-full justify-center items-center md:w-fit"
         >
           <span className="text-sm md:text-md px-2">{et("newExpense")}</span>
         </Link>
       </div>
 
-      <div className="total-expense-info flex justify-between py-2">
+      <div className="total-expense-info grid grid-cols-2 md:grid-cols-3 justify-between py-2">
         <div className="total-expense-title flex flex-col gap-2">
           <h3>{t("expenses")}</h3>
           <h4 className="text-xl font-bold">{filteredExpenses.length}</h4>

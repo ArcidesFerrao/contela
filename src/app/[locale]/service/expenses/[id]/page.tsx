@@ -68,7 +68,7 @@ export default async function ExpensePage(props: { params: Params }) {
       </div>
 
       {/* Amount card */}
-      <div className="stats p-5 flex justify-between items-center">
+      <div className="stats p-5 flex flex-col md:flex-row justify-between md:items-center">
         <div>
           <p className="label-text text-xs uppercase tracking-wide mb-1">
             {t("expenseAmount")}
@@ -77,18 +77,16 @@ export default async function ExpensePage(props: { params: Params }) {
             − MZN {item.amount.toFixed(2)}
           </p>
         </div>
-        <div className="text-right">
-          <p className="text-xs text-base-content/50 mt-1">
+        <div className="text-right text-xs font-extralight flex md:block items-center gap-2">
+          <p className="text-base-content/50 mt-1">
             {t("createdAt")}: {formatDate(item.createdAt)}
           </p>
-          <p className="text-xs font-medium">
-            {item.timestamp.toLocaleTimeString()}
-          </p>
+          <p className="font-medium">{item.timestamp.toLocaleTimeString()}</p>
         </div>
       </div>
 
       {/* Details + receipt */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div className="stats p-4 flex flex-col gap-3">
           <p className="label-text text-xs uppercase tracking-wide">
             {t("details")}
