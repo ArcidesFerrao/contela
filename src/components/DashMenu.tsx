@@ -44,33 +44,37 @@ export default function DashMenu({
               <div className="flex gap-2 items-center text-left">
                 <p>{t("dashboardMenu1")}</p>
                 {role === "SERVICE" ? (
-                  <span className=" status-pill pill-active ">Activo</span>
+                  <span className=" status-pill pill-active ">
+                    {t("active")}
+                  </span>
                 ) : (
-                  <span className="status-pill pill-new">Não registado</span>
+                  <span className="status-pill pill-new">
+                    {t("notRegistered")}
+                  </span>
                 )}
               </div>
               {role === "SERVICE" ? (
                 <p className="text-xs font-light ">
-                  {businessName} · Vendas, stock e compras
+                  {businessName} · {t("dashMenuService")}
                 </p>
               ) : (
                 <p className="text-sm font-light text-left">
-                  Cria um perfil de fornecedor para começar
+                  {t("inactiveDashService")}
                 </p>
               )}
             </div>
             <div className="text-xs font-thin flex text-left flex-col gap-1 feature-row">
               <span className="flex gap-2 opacity-85 items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
-                Painel com receita e lucro
+                {t("dashService1")}
               </span>
               <span className="flex gap-2 opacity-85 items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
-                Gestão de itens e receitas
+                {t("dashService2")}
               </span>
               <span className="flex gap-2 opacity-85 items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
-                Pedidos a fornecedores
+                {t("dashService3")}
               </span>
             </div>
           </div>
@@ -105,18 +109,22 @@ export default function DashMenu({
               <div className="flex gap-2 items-center">
                 <p>{t("dashboardMenu2")}</p>
                 {role === "SUPPLIER" ? (
-                  <span className=" status-pill pill-active ">Activo</span>
+                  <span className=" status-pill pill-active ">
+                    {t("active")}
+                  </span>
                 ) : (
-                  <span className="status-pill pill-new">Não registado</span>
+                  <span className="status-pill pill-new">
+                    {t("notRegistered")}
+                  </span>
                 )}
               </div>
               {role === "SUPPLIER" ? (
                 <p className="text-xs font-light ">
-                  {businessName} · Pedidos, stock e vendas
+                  {businessName} · {t("dashMenuSupplier")}
                 </p>
               ) : (
                 <p className="text-xs font-light text-left ">
-                  Cria um perfil de fornecedor para começar
+                  {t("inactiveDashSupplier")}
                 </p>
               )}
             </div>
@@ -124,15 +132,15 @@ export default function DashMenu({
             <div className="text-xs font-thin flex text-left flex-col gap-1 feature-row">
               <span className="flex gap-2 opacity-85 items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block" />
-                Recebe pedidos de clientes
+                {t("dashSupplier1")}
               </span>
               <span className="flex gap-2 opacity-85 items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block" />
-                Gestão de catálogo e entregas
+                {t("dashSupplier2")}
               </span>
               <span className="flex gap-2 opacity-85 items-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block" />
-                Painel de receita por período
+                {t("dashSupplier3")}
               </span>
             </div>
           </div>

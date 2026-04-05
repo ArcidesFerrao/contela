@@ -758,7 +758,20 @@
 "paymentMethod":"Método de pagamento",
 "recurring":"Recorrente",
 "uncategorized": "Sem categoria",
-"descriptionAndNotes": "Descrição e notas"
+"descriptionAndNotes": "Descrição e notas",
+"dashMenuService": "Vendas, stock e compras",
+  "dashMenuSupplier": "Pedidos, stock e vendas",
+  "dashService1": "Painel de receita e lucro",
+  "dashService2": "Gestão de stock e ingredientes",
+  "dashService3": "Pedidos e entregas a fornecedores",
+  "dashService4": "Registos de atividade e relatórios",
+  "dashSupplier1": "Painel de receita e clientes",
+  "dashSupplier2": "Gestão de catálogo e stock",
+  "dashSupplier3": "Processar entregas e pedidos",
+  "dashSupplier4": "Registos de atividade e relatórios",
+  "inactiveDashSupplier": "Crie o seu primeiro fornecedor para aceder ao painel",
+  "inactiveDashService": "Crie o seu primeiro serviço para aceder ao painel",
+  "notRegistered": "Não registado"
   },
   "Status": {
     "delivery_arrived": "ENTREGA_CHEGOU",

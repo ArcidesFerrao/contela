@@ -74,7 +74,7 @@ export default async function LogPage(props: { params: Params }) {
 
   const hasDetails = !!parsedDetails;
 
-  console.log("Parsed Details:", parsedDetails);
+  // console.log("Parsed Details:", parsedDetails);
 
   return (
     <div className="flex flex-col gap-4 w-full">

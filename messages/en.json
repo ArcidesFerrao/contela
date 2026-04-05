@@ -739,8 +739,20 @@
         "productDetails": "Details",
         "stockManagement": "Stock Management",
         "updateStockQty": "Update Stock Qty",
-        "deliveredAt": "Delivered at"
-
+        "deliveredAt": "Delivered at",
+        "dashMenuService": "Sales, inventory and purchases",
+        "dashMenuSupplier": "Orders, inventory and sales",
+        "dashService1": "Revenue and profit dashboard",
+        "dashService2": "Inventory and ingredient management",
+        "dashService3": "Supplier orders and deliveries",
+        "dashService4": "Activity logs and reports",
+        "dashSupplier1": "Revenue and customers dashboard",
+        "dashSupplier2": "Catalog and inventory management",
+        "dashSupplier3": "Process deliveries and orders",
+        "dashSupplier4": "Activity logs and reports",
+        "inactiveDashSupplier": "Create your first supplier to access the dashboard",
+        "inactiveDashService": "Create your first service to access the dashboard",
+        "notRegistered": "Not registered"
 
     },
     "Status": {
