@@ -77,12 +77,6 @@ export default async function ExpensePage(props: { params: Params }) {
             − MZN {item.amount.toFixed(2)}
           </p>
         </div>
-        <div className="text-right text-xs font-extralight flex md:block items-center gap-2">
-          <p className="text-base-content/50 mt-1">
-            {t("createdAt")}: {formatDate(item.createdAt)}
-          </p>
-          <p className="font-medium">{item.timestamp.toLocaleTimeString()}</p>
-        </div>
       </div>
 
       {/* Details + receipt */}
@@ -91,9 +85,9 @@ export default async function ExpensePage(props: { params: Params }) {
           <p className="label-text text-xs uppercase tracking-wide">
             {t("details")}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-1">
-              <p className="text-xs text-base-content/50">{t("category")}</p>
+              <p className="text-xs font-light">{t("category")}</p>
               <p className="text-sm font-medium">
                 {item.category?.name ?? (
                   <span className="text-base-content/40 font-normal italic">
@@ -103,9 +97,7 @@ export default async function ExpensePage(props: { params: Params }) {
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-xs text-base-content/50">
-                {t("paymentMethod")}
-              </p>
+              <p className="text-xs font-light">{t("paymentMethod")}</p>
               <p className="text-sm font-medium">
                 {item.paymentMethod ?? (
                   <span className="text-base-content/40 font-normal italic">
@@ -115,7 +107,7 @@ export default async function ExpensePage(props: { params: Params }) {
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-xs text-base-content/50">{t("recurring")}</p>
+              <p className="text-xs font-light">{t("recurring")}</p>
               <p
                 className={`text-sm font-medium ${item.isRecurring ? "text-purple-400" : "text-base-content/50"}`}
               >
@@ -123,7 +115,7 @@ export default async function ExpensePage(props: { params: Params }) {
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-xs text-base-content/50">{t("date")}</p>
+              <p className="text-xs font-light">{t("date")}</p>
               <p className="text-sm font-medium">
                 {formatDate(item.timestamp)}
               </p>
