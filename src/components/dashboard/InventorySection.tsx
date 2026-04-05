@@ -2,6 +2,8 @@
 import { getTranslations } from "next-intl/server";
 import { getInventoryStats, getTopItems } from "@/lib/actions/dashboardStats";
 import { Period } from "@/types/types";
+import Link from "next/link";
+import { Service, ServiceStockItem, StockItem } from "@/generated/prisma";
 
 type Props = { serviceId: string; userId: string; period: Period };
 
@@ -24,12 +26,24 @@ export async function InventorySection({ serviceId, userId, period }: Props) {
         <div className="items-list flex flex-col p-4 w-full gap-4 justify-between items-start">
           <h2 className="text-xl font-bold">{t("criticItems")}</h2>
           <ul className="flex flex-col w-full gap-1">
-            {lowStockItems.map((item) => (
-              <li key={item.id} className="flex justify-between">
-                <span>{item.stockItem.name}</span>
-                <span className="font-medium">{item.stock}</span>
-              </li>
-            ))}
+            {lowStockItems.map(
+              (
+                item: ServiceStockItem & {
+                  stockItem: StockItem;
+                  service: Service;
+                },
+              ) => (
+                <li key={item.id} className="flex justify-between">
+                  <Link
+                    href={`/service/stock/${item.id}`}
+                    className="hover:underline"
+                  >
+                    <span>{item.stockItem.name}</span>
+                  </Link>
+                  <span className="font-medium">{item.stock}</span>
+                </li>
+              ),
+            )}
           </ul>
         </div>
       )}

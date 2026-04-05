@@ -43,7 +43,7 @@ export default async function SupplyPage({
   return (
     <section className="flex flex-col w-full ">
       <div className="dash-header flex items-center justify-between">
-        <h1 className="text-4xl font-semibold">{stats.supplier}</h1>
+        <h1 className="font-semibold">{stats.supplier}</h1>
         <DateFilter currentPeriod={period} />
       </div>
 

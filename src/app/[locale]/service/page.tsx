@@ -18,6 +18,7 @@ import {
   RecentActivitySection,
   RecentActivitySkeleton,
 } from "@/components/dashboard/RecentActivitySection";
+import Link from "next/link";
 
 type SearchParams = {
   period?: "daily" | "weekly" | "monthly";
@@ -38,7 +39,9 @@ export default async function ServicePage({
   return (
     <section className="flex flex-col w-full">
       <div className="dash-header flex items-center gap-2 justify-between">
-        <h1 className="font-semibold">{session.user.name}</h1>
+        <Link href={`/user/${userId}`}>
+          <h1 className="font-semibold">{session.user.name}</h1>
+        </Link>
         <DateFilter currentPeriod={period} />
       </div>
 
