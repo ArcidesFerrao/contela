@@ -174,26 +174,26 @@ export const SalesList = ({ initialItems, serviceId }: SaleProductsProps) => {
               return (
                 <li
                   key={item.id}
-                  className={`${item.quantity === 0 ? "" : "product-selected"} grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] items-center justify-between gap-4 py-2`}
+                  className={`${item.quantity === 0 ? "" : "product-selected"} grid grid-cols-[1fr] md:grid-cols-[1fr_auto_auto] items-center  gap-4 py-2`}
                 >
-                  <div className="flex flex-col">
-                    <h3 className="text-sm truncate">{item.name}</h3>
+                  <div className="flex justify-between md:flex-col">
+                    <h3 className=" truncate">{item.name}</h3>
                     <p className="text-xs">
                       {(item.price ?? 0).toFixed(2)} MZN
                     </p>
                   </div>
 
                   {/* <div className="sales-amount flex gap-2 items-center max-w-6/12"> */}
-                  <div className="amount-btn flex items-center w-fit">
+                  <div className="amount-btn flex items-center justify-between justify-items-end md:w-fit ">
                     <button
-                      className="px-3 py-1"
+                      className="px-3 py-1 md:w-full"
                       onClick={() => handleDecrement(item.id)}
                     >
                       -
                     </button>
                     <span className="w-12 text-center">{item.quantity}</span>
                     <button
-                      className="px-3 py-1"
+                      className="px-3 py-1  md:w-full"
                       onClick={() => handleIncrement(item.id)}
                     >
                       +
@@ -217,11 +217,11 @@ export const SalesList = ({ initialItems, serviceId }: SaleProductsProps) => {
         <h2 className="text-lg font-medium">{st("orderSummary")}</h2>
         {totalItems > 0}
         <div className="flex justify-between">
-          <h3>{t("items")}:</h3>
+          <h4>{t("items")}:</h4>
           <p>{totalItems}</p>
         </div>
         <div className="flex justify-between">
-          <h3>Total:</h3>
+          <h4>Total:</h4>
           <p>{totalPrice} MZN</p>
         </div>
         <button

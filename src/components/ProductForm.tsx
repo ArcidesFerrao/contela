@@ -788,10 +788,10 @@ export const ServiceStockItemForm = ({
       onSubmit={form.onSubmit}
       className="flex flex-col gap-3 w-full"
     >
-      <h2 className="textsm font-medium mb-1">
+      <p className="text-sm font-light mb-1">
         {t("fillFormTo")} {stockItem ? t("editThe") : t("createNew")}{" "}
         {it("stockItem")}
-      </h2>
+      </p>
 
       {/* Hidden fields */}
       {stockItem && <input type="hidden" name="id" value={stockItem.id} />}
@@ -820,6 +820,7 @@ export const ServiceStockItemForm = ({
             value={name}
             onChange={(e) => setName(e.target.value)}
             autoComplete="off"
+            className="text-sm font-light"
           />
           {fields.name.errors && (
             <p className="text-xs font-light text-error">
@@ -850,7 +851,7 @@ export const ServiceStockItemForm = ({
         <p className="label-text text-xs uppercase tracking-wide">
           {st("unitOfMeasure")}
         </p>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="flex flex-col gap-1">
             <label
               className="text-xs font-medium text-base-content/60"
@@ -865,6 +866,7 @@ export const ServiceStockItemForm = ({
               min={1}
               value={unitQty}
               onChange={(e) => setUnitQty(Number(e.target.value))}
+              className="text-sm font-light"
             />
             {unitHint && <p className="text-xs text-green-400">{unitHint}</p>}
             {fields.unitQty.errors && (
@@ -928,6 +930,7 @@ export const ServiceStockItemForm = ({
               min={0}
               step={0.01}
               defaultValue={stockItem?.cost || 0}
+              className="text-sm font-light"
             />
             <p className="text-xs text-base-content/40">
               {st("totalBatchCost")}
@@ -972,6 +975,7 @@ export const ServiceStockItemForm = ({
               value={stock}
               onChange={(e) => setStock(Number(e.target.value))}
               disabled={!!stockItem?.stock}
+              className="text-sm font-light"
             />
             <p className="text-xs text-base-content/40">
               {st("currentAvailableQty")}
@@ -1002,6 +1006,7 @@ export const ServiceStockItemForm = ({
                 setCritical(e.target.value ? Number(e.target.value) : null)
               }
               placeholder="ex: 10"
+              className="text-sm font-light"
             />
             {critical && critical > 0 ? (
               <p className="text-xs text-amber-400">
@@ -1034,7 +1039,7 @@ export const ServiceStockItemForm = ({
           id="description"
           placeholder={t("description")}
           defaultValue={stockItem?.description || ""}
-          className="min-h-20 w-full"
+          className="min-h-20 w-full text-sm font-light"
         />
         {fields.description.errors && (
           <p className="text-xs font-light text-error">
@@ -1054,7 +1059,7 @@ export const ServiceStockItemForm = ({
         type="submit"
         disabled={isPending}
         value={isPending ? "..." : stockItem ? it("editItem") : t("addItem")}
-        className="submit-button"
+        className="submit-button text-sm"
       />
     </form>
   );

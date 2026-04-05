@@ -24,7 +24,9 @@ export default async function NewStockItemPage({
   return (
     <div className="flex flex-col gap-5 items-center w-full">
       <div className="flex items-center justify-between w-full">
-        <h1 className="text-xl font-semibold">{t("addNewStockItem")}</h1>
+        <h1 className="text-lg md:text-xl font-semibold">
+          {t("addNewStockItem")}
+        </h1>
         <Link href={`/${locale}/service/products`}>
           <span className="ep--back"></span>
         </Link>
