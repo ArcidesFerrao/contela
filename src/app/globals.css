@@ -150,6 +150,10 @@ body {
     padding: 1rem !important;
   }
 
+  .stock-critical {
+    display: none;
+  }
+
   .suppliertop-list {
     width: 100%;
   }
@@ -305,7 +309,11 @@ header {
 th {
   text-align: start;
 }
-th,
+
+th {
+  padding: 0.4rem 0.8rem;
+}
+
 td {
   padding: 0.4rem 0.8rem;
   font-size: small;

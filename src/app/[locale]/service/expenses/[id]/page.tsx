@@ -165,9 +165,7 @@ export default async function ExpensePage(props: { params: Params }) {
           <div className="grid grid-cols-2 gap-4">
             {item.description && (
               <div className="flex flex-col gap-1">
-                <p className="text-xs text-base-content/50">
-                  {t("description")}
-                </p>
+                <p className="text-xs font-light">{t("description")}</p>
                 <p className="text-sm text-base-content/70 leading-relaxed">
                   {item.description}
                 </p>
@@ -175,7 +173,7 @@ export default async function ExpensePage(props: { params: Params }) {
             )}
             {item.notes && (
               <div className="flex flex-col gap-1">
-                <p className="text-xs text-base-content/50">{t("notes")}</p>
+                <p className="text-xs font-light">{t("notes")}</p>
                 <p className="text-sm text-base-content/70 leading-relaxed">
                   {item.notes}
                 </p>

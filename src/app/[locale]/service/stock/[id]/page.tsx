@@ -115,9 +115,9 @@ export default async function StockItemPage(props: { params: Params }) {
       <div className="listing-stock-item p-4 flex flex-col gap-3 rounded-lg">
         <div className="flex justify-between items-start">
           <div>
-            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+            <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground mb-1">
               {t("currentStock")}
-            </p>
+            </h3>
             <div className="flex items-baseline gap-5">
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl font-semibold">{currentStock}</span>
@@ -132,10 +132,10 @@ export default async function StockItemPage(props: { params: Params }) {
               )}
             </div>
           </div>
-          <div className="text-right">
-            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+          <div className="text-right hidden md:block">
+            <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground mb-1">
               {t("criticalMin")}
-            </p>
+            </h3>
             <p className="text-sm font-medium">
               {criticalMin} {t("units")}
             </p>
@@ -159,20 +159,20 @@ export default async function StockItemPage(props: { params: Params }) {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full">
-        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-2">
+        <div className="listing-stock-item px-2 py-4  md:p-4 rounded-lg flex flex-col gap-2">
           <div>
-            <p className="text-xs uppercase tracking-wider text-muted-foreground">
+            <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground">
               {t("status")}
-            </p>
+            </h3>
             <span className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-500">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               {t("active")}
             </span>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-wider text-muted-foreground">
+            <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground">
               {t("usedInRecipes")}
-            </p>
+            </h3>
             <div className="flex items-center gap-3 justify-between">
               <p className="text-lg font-semibold">
                 {item?.RecipeItems.length}
@@ -186,19 +186,19 @@ export default async function StockItemPage(props: { params: Params }) {
             </div>
           </div>
         </div>
-        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-1">
-          <p className="text-xs uppercase tracking-wider text-muted-foreground">
+        <div className="listing-stock-item  px-2 py-4  md:p-4 rounded-lg flex flex-col gap-1">
+          <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground">
             {t("unitCost")}
-          </p>
+          </h3>
           <p className="text-lg font-semibold">{item?.cost?.toFixed(2)} MZN</p>
           <p className="text-xs text-muted-foreground">
             {t("stockValue")}: {stockValue.toFixed(2)} MZN
           </p>
         </div>
-        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-1">
-          <p className="text-xs uppercase tracking-wider text-muted-foreground">
+        <div className="listing-stock-item  px-2 py-4  md:p-4 rounded-lg flex flex-col gap-1">
+          <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground">
             {t("quantityPerUnit")}
-          </p>
+          </h3>
           <p className="text-lg font-semibold">
             {item?.stockItem.unitQty}{" "}
             <span className="text-sm font-normal text-muted-foreground">
@@ -210,15 +210,14 @@ export default async function StockItemPage(props: { params: Params }) {
       {/* Stock movements */}
       {(item?.stockMovements.length ?? 0) > 0 && (
         <div className="listing-stock-item p-4 rounded-lg w-full">
-          <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-3">
+          <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground mb-3">
             {t("recentMovements")}
           </h3>
-          <table className="w-full text-sm">
+          <table className="w-full">
             <thead>
               <tr className="text-xs uppercase tracking-wider text-muted-foreground">
                 <th className="text-left font-normal">{t("date")}</th>
                 <th className="text-left font-normal">{t("type")}</th>
-                <th className="text-left font-normal">{t("reference")}</th>
                 <th className="text-right font-normal">{t("quantity")}</th>
               </tr>
             </thead>
@@ -250,7 +249,10 @@ export default async function StockItemPage(props: { params: Params }) {
                 return (
                   <tr key={mov.id} className="border-t border-border/30">
                     <td className="py-2 text-muted-foreground">
-                      {mov.timestamp.toLocaleDateString("pt-MZ")}
+                      {mov.timestamp.toLocaleDateString("pt-MZ", {
+                        day: "2-digit",
+                        month: "short",
+                      })}
                     </td>
                     <td className="py-2">
                       <span
@@ -259,9 +261,7 @@ export default async function StockItemPage(props: { params: Params }) {
                         {config.label}
                       </span>
                     </td>
-                    <td className="py-2 text-muted-foreground text-xs lowercase font-light">
-                      {mov.referenceId?.slice(0, 6)}...
-                    </td>
+
                     <td className={`py-2 text-right font-medium ${qtyColor}`}>
                       {displayQty}
                     </td>
@@ -279,8 +279,8 @@ export default async function StockItemPage(props: { params: Params }) {
         </div>
       )}
       <div className="flex flex-col gap-2">
-        <h2 className="font-semibold">{t("description")} </h2>
-        <span className="product-detail-desc p-3 text-md min-h-20 font-light">
+        <h3 className="font-semibold label-text">{t("description")} </h3>
+        <span className="product-detail-desc p-3 text-sm min-h-20 font-light">
           <p>{item?.stockItem.description}</p>
         </span>
       </div>
