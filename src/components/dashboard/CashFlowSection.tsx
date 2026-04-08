@@ -43,7 +43,7 @@ export async function CashFlowSection({ serviceId, userId, period }: Props) {
           </h4>
         </div>
       </div>
-      <div className="w-full mt-2" style={{ height: "120px" }}>
+      <div className="w-full mt-2" style={{ height: "320px" }}>
         <RevenueTrendChart data={stats.trendData} />
       </div>
     </div>

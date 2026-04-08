@@ -92,7 +92,7 @@ export default function ExpenseForm({
         required
         min={0}
       />
-      <div className=" flex gap-4 justify-between">
+      <div className=" flex flex-col gap-2 justify-between">
         <label htmlFor="amount">{t("amount")} (MZN)</label>
         <input
           type="number"
@@ -105,7 +105,7 @@ export default function ExpenseForm({
         />
       </div>
       {fields.amount.allErrors && <p>{fields.amount.errors}</p>}
-      <div className="flex gap-4 justify-between">
+      <div className="flex flex-col gap-2 justify-between">
         <label htmlFor="description">{t("description")}</label>
         <input
           type="text"

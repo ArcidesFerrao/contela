@@ -21,7 +21,10 @@ export default async function NewExpense({
   return (
     <div className="sales-section flex flex-col gap-5 w-full">
       <div className="list-header flex items-center justify-between w-full">
-        <h2 className="text-2xl font-bold">{et("expenseItem")}</h2>
+        <div className="flex flex-col gap-1">
+          <h2 className="text-2xl font-bold">{et("expenseItem")}</h2>
+          <p className="font-light">Regista um gasto do negócio</p>
+        </div>
         <Link
           href={`/${locale}/service/sales`}
           className="add-product flex gap-1"
