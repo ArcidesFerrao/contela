@@ -68,7 +68,7 @@ export async function createSale(
                         
                     if (recipeItem.usageType !== "UNIT") {
                         const qtyUsed = recipeItem.quantity * saleItem.quantity;
-                        console.log(qtyUsed)
+                        // console.log(qtyUsed)
                         
                         const cost = qtyUsed * (recipeItem.serviceStockItem.cost || 0) / recipeItem.serviceStockItem.stockItem.unitQty
                         // console.log(cost)

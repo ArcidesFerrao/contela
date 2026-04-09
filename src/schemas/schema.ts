@@ -112,7 +112,7 @@ export const catalogItemSchema = z.object({
 export const expenseSchema = z.object({
     id: z.string().optional(),
     description: z.string().optional(),
-    amount: z.number().positive("Quanitity must be greater than 0"),
+    amount: z.number().positive("Quantity must be greater than 0"),
     categoryId: z.string().optional(),
     serviceId: z.string(),
     userId: z.string(),

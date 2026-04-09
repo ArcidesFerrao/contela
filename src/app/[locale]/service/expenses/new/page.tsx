@@ -27,7 +27,7 @@ export default async function NewExpense({
         </div>
         <Link
           href={`/${locale}/service/sales`}
-          className="add-product flex gap-1"
+          className="cancel-btn flex gap-1"
         >
           <span className="text-md px-2">{t("cancel")}</span>
         </Link>

@@ -72,7 +72,7 @@ export default function ExpenseForm({
       id={form.id}
       action={action}
       onSubmit={form.onSubmit}
-      className="expense-form flex flex-col gap-4 min-w-md"
+      className="expense-form flex flex-col gap-4 md:min-w-md"
     >
       <input
         type="hidden"
@@ -111,6 +111,7 @@ export default function ExpenseForm({
           type="text"
           id="description"
           name="description"
+          placeholder="Descreva a despesa..."
           value={formData.description}
           onChange={handleChange}
           required

@@ -424,7 +424,8 @@
         "noIngredientsYet": "Nenhum ingrediente adicionado",
         "addIngredient":"Adicionar ingrediente",
         "usageType": "Uso",
-        "ingredients": "Ingredientes"
+        "ingredients": "Ingredientes",
+        "createExpenseSuccess": "Despesa criada com sucesso"
   },
   "Loading": {
     "loading": "A carregar...",
