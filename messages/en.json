@@ -752,7 +752,16 @@
         "dashSupplier4": "Activity logs and reports",
         "inactiveDashSupplier": "Create your first supplier to access the dashboard",
         "inactiveDashService": "Create your first service to access the dashboard",
-        "notRegistered": "Not registered"
+        "notRegistered": "Not registered",
+        "aov": "Avg. Order Value",
+  "stockOk": "Stock OK",
+  "noClientsYet": "No clients yet",
+  "registeredClients": "Registered Clients",
+  "minStock": "MMin.",
+  "urgentRestock": "Urgent Restock",
+  "itemsOutOfStock": "Items Out of Stock",
+  "allStockOk": "Stock OK",
+  "noLowStockItems": "No Low Stock Items"
 
     },
     "Status": {

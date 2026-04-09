@@ -772,7 +772,16 @@
   "dashSupplier4": "Registos de atividade e relatórios",
   "inactiveDashSupplier": "Crie o seu primeiro fornecedor para aceder ao painel",
   "inactiveDashService": "Crie o seu primeiro serviço para aceder ao painel",
-  "notRegistered": "Não registado"
+  "notRegistered": "Não registado",
+  "aov": "Valor médio",
+  "stockOk": "Tudo em ordem",
+  "noClientsYet": "Nenhum registado",
+  "registeredClients": "Clientes activos",
+  "minStock": "Mín.",
+  "urgentRestock": "Repor stock urgente",
+  "itemsOutOfStock": "item(s) esgotado(s)",
+  "allStockOk": "Stock em ordem",
+  "noLowStockItems": "Nenhum item abaixo do mínimo"
   },
   "Status": {
     "delivery_arrived": "ENTREGA_CHEGOU",
