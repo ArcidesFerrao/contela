@@ -174,7 +174,10 @@ export function SelectExport({
           <option value="logs">{et("logsReport")}</option>
         </select>
 
-        <button className="text-xs font-normal" onClick={handleExport}>
+        <button
+          className="text-xs md:text-sm font-normal"
+          onClick={handleExport}
+        >
           {isExporting ? lt("exporting") : et("dataExport")}
         </button>
 

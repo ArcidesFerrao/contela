@@ -281,10 +281,12 @@ export async function getSupplierDashBoardStats(period: Period = 'monthly') {
             })
 
             const customerCount = await db.supplierCustomer.count({
-                where: { supplierId, createdAt: {
-                            gte: startDate,
-                            lte: endDate,
-                        } }
+                where: { supplierId, 
+                    // createdAt: {
+                    //         gte: startDate,
+                    //         lte: endDate,
+                    //     }
+                    }
             })
 
             const saleCount = await db.sale.count({

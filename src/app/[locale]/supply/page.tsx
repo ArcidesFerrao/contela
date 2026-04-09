@@ -77,12 +77,12 @@ export default async function SupplyPage({
                 {stats.stockItemCount}
               </h4>
               <span
-                className={`text-xs text-base-content/50  opacity-60 ${
+                className={`text-xs text-base-content/50  font-light opacity-60 ${
                   (stats.lowStockCount ?? 0) === 0 ? "text-error" : "text-green"
                 }`}
               >
-                <p>
-                  {t("lowStock")} {stats.lowStockCount ?? 0}
+                <p className="px-2 py-0.5 rounded-full">
+                  {t("lowStock")}: {stats.lowStockCount ?? 0}
                 </p>
               </span>
             </div>

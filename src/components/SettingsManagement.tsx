@@ -99,7 +99,7 @@ export function SettingsManagement({
         />
       </div>
       <button
-        className="text-xs font-normal"
+        className="text-xs md:text-sm font-normal"
         type="button"
         onClick={handleSaveSettings}
       >
