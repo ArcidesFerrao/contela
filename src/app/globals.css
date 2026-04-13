@@ -116,6 +116,7 @@ body {
     gap: 1rem;
   }
 
+  .delivery-items-table,
   .total-sales-title,
   .purchase-total,
   .order-items-data,

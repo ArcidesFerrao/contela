@@ -107,7 +107,7 @@ export default async function SupplyPage({
       </div>
 
       {/* Bottom grid: top ordered + low stock */}
-      <div className="grid grid-cols-2 gap-4">
+      {/* <div className="grid grid-cols-2 gap-4">
         {stats.topItems.length > 0 && (
           <div className="items-list flex flex-col p-4 gap-4">
             <h2 className="text-xl font-bold">{t("topOrdered")}</h2>
@@ -149,7 +149,7 @@ export default async function SupplyPage({
             </ul>
           </div>
         )}
-      </div>
+      </div> */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Top ordered */}
         {stats.topItems.length > 0 && (
@@ -157,10 +157,10 @@ export default async function SupplyPage({
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium">{t("topOrdered")}</span>
               <Link
-                href="/stock"
+                href="/supply/stock"
                 className="text-xs text-[#1D9E75] hover:underline"
               >
-                {t("viewAll")} →
+                {t("view")} →
               </Link>
             </div>
             <ul className="flex flex-col gap-2">
@@ -201,7 +201,7 @@ export default async function SupplyPage({
                 {t("lowStock")} {t("items")}
               </span>
               <Link
-                href="/stock"
+                href="/supply/stock"
                 className="text-xs text-[#1D9E75] hover:underline"
               >
                 {t("manage")} →
@@ -234,7 +234,7 @@ export default async function SupplyPage({
 
             {/* Urgent restock alert */}
             {stats.lowStockItems.some((i) => (i.stock ?? 0) === 0) && (
-              <div className="mt-1 rounded-lg border border-error/20 bg-error/8 px-3 py-2.5">
+              <div className="mt-1 rounded-lg border border-yellow-400 text-yellow-400 px-3 py-2.5">
                 <p className="text-xs font-medium text-error">
                   {t("urgentRestock")}
                 </p>

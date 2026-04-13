@@ -59,7 +59,7 @@ export const MenuButton = ({
               </button>
             </div>
             {pathname.startsWith(`/${locale}/supply`) && (
-              <ul className="header-links flex flex-col gap-2 min-w-sm">
+              <ul className="header-links flex flex-col gap-2 ">
                 <HomeNavLink
                   href={`/${locale}/supply`}
                   onClick={() => setShowMenu(false)}
