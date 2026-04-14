@@ -15,38 +15,39 @@ export default function UserProfile({ user }: { user: UserProfile }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="user-header flex justify-between items-center">
-        <div className="profile-sections">
+      {/* <div className="flex justify-between items-center"> */}
+      <div className="profile-sections hidden md:flex">
+        {/* <div className="profile-sections "> */}
+        <button
+          onClick={() => setView("personal")}
+          className={view === "personal" ? "active-view" : ""}
+        >
+          {t("personalInformation")}
+        </button>
+        {user.role === "SERVICE" && user.Service && (
           <button
-            onClick={() => setView("personal")}
-            className={view === "personal" ? "active-view" : ""}
+            onClick={() => setView("detail")}
+            className={view === "detail" ? "active-view" : ""}
           >
-            {t("personalInformation")}
+            {t("serviceDetails")}
           </button>
-          {user.role === "SERVICE" && user.Service && (
-            <button
-              onClick={() => setView("detail")}
-              className={view === "detail" ? "active-view" : ""}
-            >
-              {t("serviceDetails")}
-            </button>
-          )}
-          {user.role === "SUPPLIER" && user.Supplier && (
-            <button
-              onClick={() => setView("detail")}
-              className={view === "detail" ? "active-view" : ""}
-            >
-              {t("supplierDetails")}
-            </button>
-          )}
+        )}
+        {user.role === "SUPPLIER" && user.Supplier && (
           <button
-            onClick={() => setView("security")}
-            className={view === "security" ? "active-view" : ""}
+            onClick={() => setView("detail")}
+            className={view === "detail" ? "active-view" : ""}
           >
-            {t("security")}
+            {t("supplierDetails")}
           </button>
-        </div>
+        )}
+        <button
+          onClick={() => setView("security")}
+          className={view === "security" ? "active-view" : ""}
+        >
+          {t("security")}
+        </button>
       </div>
+      {/* </div> */}
       {view === "personal" && (
         <div className="personal-section flex flex-col gap-2">
           <h3>{t("personalData")}</h3>
