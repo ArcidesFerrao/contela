@@ -450,10 +450,12 @@ export const DashSaleListItem = ({ sale }: { sale: Sale }) => {
     >
       <div className="sale-header flex justify-between">
         <div className="sale-title flex flex-col gap-2">
-          <h3 className="flex gap-2">
-            {st("sale")}
-            <p className="text-sm font-light ">#{sale.id.slice(0, 6)}...</p>
-          </h3>
+          <Link href={`/service/sales/${sale.id}`}>
+            <h3 className="flex gap-2">
+              {st("sale")}
+              <p className="text-sm font-light ">#{sale.id.slice(0, 6)}...</p>
+            </h3>
+          </Link>
           <div className="sale-title-details flex gap-4">
             <div className="flex gap-2 items-center">
               <span className="flex items-center">

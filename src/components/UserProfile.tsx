@@ -16,6 +16,20 @@ export default function UserProfile({ user }: { user: UserProfile }) {
   return (
     <div className="flex flex-col gap-5">
       {/* <div className="flex justify-between items-center"> */}
+      <div className="profile-select md:hidden">
+        <select
+          name="profileView"
+          id="profileView"
+          onChange={(e) =>
+            setView(e.target.value as "personal" | "detail" | "security")
+          }
+          value={view}
+        >
+          <option value="personal">{t("personalInformation")}</option>
+          <option value="detail">{t("serviceDetails")}</option>
+          <option value="security">{t("security")}</option>
+        </select>
+      </div>
       <div className="profile-sections hidden md:flex">
         {/* <div className="profile-sections "> */}
         <button
