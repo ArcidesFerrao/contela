@@ -46,11 +46,6 @@ body {
   .severity-logs {
     display: none !important;
   }
-  .purchase-header,
-  .sale-header {
-    flex-direction: column;
-    gap: 1rem;
-  }
 
   .activity-logs-info {
     display: grid;
@@ -717,7 +712,7 @@ h1 {
 }
 
 /* .user-header a, */
-.order-status button,
+/* .order-status button, */
 .purchase-list button,
 .deliveries-details button,
 .order-header button {
@@ -729,8 +724,8 @@ h1 {
 .expense-form button:hover,
 .confirm-delivery button:hover,
 .fullfill-btn:hover,
-.order-status button,
 .deliveries-details button,
+.order-status span,
 .order-header button,
 .purchase-list button:hover,
 .schedule-button:hover,

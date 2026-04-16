@@ -29,55 +29,23 @@ export const SaleListItem = ({ sale }: { sale: SaleWithItems }) => {
             {st("sale")}
             <p className="text-xs font-light ">#{sale.id.slice(0, 6)}...</p>
           </h3>
-          <div className="sale-title-details flex gap-4">
-            <div className="flex gap-2 items-center">
-              <span className="formkit--date"></span>
-              <p className="text-xs font-light">
-                {sale.timestamp.toLocaleDateString(undefined, {
-                  day: "2-digit",
-                  month: "2-digit",
-                })}{" "}
-                ,{" "}
-                {sale.timestamp.toLocaleTimeString(undefined, {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
-              </p>
-            </div>
-            {sale.SaleItem.length > 1 && (
-              <div className="flex items-center gap-2">
-                <span className="flex items-center">
-                  <span className="fluent--box-16-regular"></span>
-                </span>
-                <p className="text-xs font-light">
-                  {sale.SaleItem.length} {t("items")}
-                </p>
-              </div>
-            )}
-            {/* <p className="text-sm font-light">{sale.paymentType}</p> */}
+          <div className="flex gap-2 items-center">
+            <span className="formkit--date"></span>
+            <p className="text-xs font-light">
+              {sale.timestamp.toLocaleDateString(undefined, {
+                day: "2-digit",
+                month: "2-digit",
+              })}{" "}
+              ,{" "}
+              {sale.timestamp.toLocaleTimeString(undefined, {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-6 shrink-0">
           {/* Profit + margin bar */}
-          <div className="flex flex-col justify-end  gap-3 md:text-right">
-            <p className="text-xs font-light label-text text-left">
-              {t("grossProfit")}
-            </p>
-            <div className="flex items-center gap-2 justify-between md:justify-end">
-              <p className="text-sm font-medium text-green-400 whitespace-nowrap">
-                MZN {profit.toFixed(2)}
-              </p>
-              <span className="w-10 h-1 bg-base-content/20 rounded-full overflow-hidden inline-block">
-                <span
-                  className="block h-full bg-green-400 rounded-full"
-                  style={{ width: `${barWidth}%` }}
-                />
-              </span>
-              <p className="text-xs text-base-content/40 whitespace-nowrap">
-                {margin.toFixed(1)}%
-              </p>
-            </div>
-          </div>
 
           {/* Total */}
           <div className="flex flex-col justify-end gap-1 text-right">
@@ -93,39 +61,51 @@ export const SaleListItem = ({ sale }: { sale: SaleWithItems }) => {
               MZN {sale.total.toFixed(2)}
             </h4>
           </div>
-
-          {/* Chevron */}
         </div>
       </button>
 
-      {/* <div className="flex flex-col gap-2">
-        <p>{t("totalAmount")}</p>
-        <h4 className="text-lg font-bold  text-nowrap">
-          MZN {sale.total.toFixed(2)}
-        </h4>
-      </div> */}
-      {/* </div> */}
       {open && (
-        <table>
-          <thead>
-            <tr>
-              <th>{t("qty")}</th>
-              <th>{t("item")}</th>
-              <th className="unit-cost">{t("unitCost")}</th>
-              <th>{t("total")}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sale.SaleItem.map((i) => (
-              <tr key={i.id}>
-                <td>{i.quantity}</td>
-                <td>{i.item?.name}</td>
-                <td className="unit-cost">MZN {i.price}.00</td>
-                <td>MZN {i.quantity * i.price}.00</td>
+        <>
+          <div className="flex flex-col justify-end  gap-3 md:text-right">
+            <p className="text-xs font-light label-text text-left">
+              {t("grossProfit")}
+            </p>
+            <div className="flex items-center gap-2 justify-between">
+              <p className="text-sm font-medium text-green-400 whitespace-nowrap">
+                MZN {profit.toFixed(2)}
+              </p>
+              <span className="w-10 h-1 bg-base-content/20 rounded-full overflow-hidden inline-block">
+                <span
+                  className="block h-full bg-green-400 rounded-full"
+                  style={{ width: `${barWidth}%` }}
+                />
+              </span>
+              <p className="text-xs text-base-content/40 whitespace-nowrap">
+                {margin.toFixed(1)}%
+              </p>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>{t("qty")}</th>
+                <th>{t("item")}</th>
+                <th className="unit-cost">{t("unitCost")}</th>
+                <th>{t("total")}</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {sale.SaleItem.map((i) => (
+                <tr key={i.id}>
+                  <td>{i.quantity}</td>
+                  <td>{i.item?.name}</td>
+                  <td className="unit-cost">MZN {i.price}.00</td>
+                  <td>MZN {i.quantity * i.price}.00</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
       )}
     </li>
   );

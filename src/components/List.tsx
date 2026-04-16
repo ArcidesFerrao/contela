@@ -187,7 +187,7 @@ export const PurchaseListItem = ({
               </p>
             )}
           </div>
-          <p className="text-xs font-light">{purchases.paymentType}</p>
+          {/* <p className="text-xs font-light">{purchases.paymentType}</p> */}
         </div>
         <div className="flex flex-col gap-2">
           <p>{t("totalAmount")}</p>
@@ -243,12 +243,21 @@ export const OrderListItem = ({
         <div className="flex gap-4">
           <div className="order-header flex flex-col gap-2">
             <Link href={`/${locale}/service/purchases/orders/${order.id}`}>
-              <h3 className="order-title flex flex-col gap-1 text-xl font-medium">
+              {/* <h3 className="order-title flex flex-col gap-1 text-xl font-medium">
                 {ot("order")}
-                <p className="text-xs font-light opacity-65">
-                  #{order.id.slice(0, 6)}...
-                </p>
-              </h3>
+              </h3> */}
+              <p className="text-xs font-light opacity-65">
+                #{order.id.slice(0, 6)}...
+              </p>
+              <div className="order-status">
+                <span
+                  className={`text-xs px-3 py-1 rounded-full ${
+                    order.status === "DELIVERED" ? "text-green-400 " : ""
+                  }`}
+                >
+                  {st(order.status.toLocaleLowerCase()).toUpperCase()}
+                </span>
+              </div>
             </Link>
             <div className="order-info flex items-center">
               <p className="text-xs font-light">
@@ -264,21 +273,17 @@ export const OrderListItem = ({
               </p>
             </div>
           </div>
-          <div className="flex flex-col justify-between gap-2 text-xs font-light">
-            <div className="order-status">
-              <button
+          {/* <div className="flex flex-col justify-between gap-2 text-xs font-light">  <button
                 disabled
                 className={`${
                   order.status === "DELIVERED" ? "text-green-400" : ""
                 }`}
               >
                 {st(order.status.toLocaleLowerCase()).toUpperCase()}
-              </button>
-            </div>
-            <p className="">
+              </button> 
+               <p className="">
               {totalItemsOrdered} {t("items")}
-            </p>
-          </div>
+            </p> </div> */}
         </div>
         {order.status === "DRAFT" ||
           (order.status === "SUBMITTED" && (
