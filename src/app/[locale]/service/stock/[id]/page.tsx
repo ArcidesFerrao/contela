@@ -195,7 +195,7 @@ export default async function StockItemPage(props: { params: Params }) {
             {t("stockValue")}: {stockValue.toFixed(2)} MZN
           </p>
         </div>
-        <div className="listing-stock-item  px-2 py-4  md:p-4 rounded-lg flex flex-col gap-1">
+        <div className="listing-stock-item col-span-2 md:col-span-1 px-2 py-4  md:p-4 rounded-lg flex flex-col gap-1">
           <h3 className="label-text text-xs uppercase tracking-wider text-muted-foreground">
             {t("quantityPerUnit")}
           </h3>

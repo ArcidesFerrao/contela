@@ -761,7 +761,9 @@
   "urgentRestock": "Urgent Restock",
   "itemsOutOfStock": "Items Out of Stock",
   "allStockOk": "Stock OK",
-  "noLowStockItems": "No Low Stock Items"
+  "noLowStockItems": "No Low Stock Items",
+  "error": "Erro"
+
 
     },
     "Status": {

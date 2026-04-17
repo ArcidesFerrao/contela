@@ -65,7 +65,7 @@ export default async function ItemPage(props: { params: Params }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 w-full">
+      <div className="grid grid-cols-2 md:grid-cols-3  gap-3 w-full">
         <div className="listing-stock-item p-4 rounded-lg flex flex-col  justify-between gap-2">
           <p className="text-xs uppercase tracking-wider text-muted-foreground">
             {t("status")}
@@ -99,7 +99,7 @@ export default async function ItemPage(props: { params: Params }) {
           </p>
         </div>
 
-        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-2">
+        <div className="listing-stock-item p-4 col-span-2 md:col-span-1 rounded-lg flex md:flex-col justify-between gap-2">
           <p className="text-xs uppercase tracking-wider text-muted-foreground">
             {t("type")}
           </p>
@@ -111,11 +111,13 @@ export default async function ItemPage(props: { params: Params }) {
 
       {/* Price + stock info */}
       <div className="grid grid-cols-2 gap-3 w-full">
-        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-1">
+        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-2">
           <p className="text-xs uppercase tracking-wider text-muted-foreground">
             {t("price")}
           </p>
-          <p className="text-xl font-semibold">{item?.price?.toFixed(2)} MZN</p>
+          <p className="text-md md:text-xl font-semibold">
+            {item?.price?.toFixed(2)} MZN
+          </p>
           {(item?.priceHistories.length ?? 0) > 0 && (
             <div className="mt-2 flex flex-col gap-1">
               <p className="text-xs text-muted-foreground">
@@ -145,12 +147,14 @@ export default async function ItemPage(props: { params: Params }) {
             </div>
           )}
         </div>
-        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-1">
+        <div className="listing-stock-item p-4 rounded-lg flex flex-col gap-2">
           <p className="text-xs uppercase tracking-wider text-muted-foreground">
             {t("recipeItems")}
           </p>
-          <p className="text-xl font-semibold">{recipeItems.length}</p>
-          <p className="text-xs text-muted-foreground">{t("ingredients")}</p>
+          <div className="flex gap-2 items-center">
+            <p className="text-xl font-semibold">{recipeItems.length}</p>
+            <p className="text-sm">{t("ingredients")}</p>
+          </div>
         </div>
       </div>
       {/* Recipe items table */}
