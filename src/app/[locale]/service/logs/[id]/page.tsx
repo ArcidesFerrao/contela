@@ -38,6 +38,8 @@ const ENTITY_STYLES: Record<string, string> = {
   Purchase: "bg-amber-400/10 text-amber-400",
   Delivery: "bg-purple-400/10 text-purple-400",
   Expense: "bg-red-400/10 text-red-400",
+  StockItem: "bg-cyan-400/10 text-cyan-400",
+  Category: "bg-yellow-400/10 text-yellow-400",
 };
 
 const SEVERITY_STYLES: Record<string, string> = {
@@ -74,6 +76,7 @@ export default async function LogPage(props: { params: Params }) {
 
   const hasDetails = !!parsedDetails;
 
+  console.log("Action Type:", log.actionType);
   // console.log("Parsed Details:", parsedDetails);
 
   return (
@@ -123,7 +126,7 @@ export default async function LogPage(props: { params: Params }) {
             <span
               className={`text-xs font-semibold border px-2 py-0.5 rounded bg-base-content/10 text-base-content/70 w-fit uppercase tracking-wide  ${severityStyle}`}
             >
-              {log.severity}
+              {t(log.severity.toLocaleLowerCase())}
             </span>
           </div>
         </div>

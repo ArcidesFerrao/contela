@@ -782,7 +782,9 @@
   "itemsOutOfStock": "item(s) esgotado(s)",
   "allStockOk": "Stock em ordem",
   "noLowStockItems": "Nenhum item abaixo do mínimo",
-  "error": "Erro"
+  "error": "Erro",
+  "stockitem": "Stock Item"
+
   },
   "Status": {
     "delivery_arrived": "ENTREGA_CHEGOU",

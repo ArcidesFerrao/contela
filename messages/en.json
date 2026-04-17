@@ -762,7 +762,8 @@
   "itemsOutOfStock": "Items Out of Stock",
   "allStockOk": "Stock OK",
   "noLowStockItems": "No Low Stock Items",
-  "error": "Erro"
+  "error": "Error",
+  "stockitem": "Stock Item"
 
 
     },
