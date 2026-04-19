@@ -52,19 +52,17 @@ export default async function ProductPage(props: { params: Params }) {
   return (
     <div className="flex flex-col gap-5 items-start w-full">
       {/* Header */}
-      <div className="flex justify-between items-start w-full">
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-semibold">{item.name}</h2>
-            <StatusToggle itemId={id} initialStatus={item.status ?? "ACTIVE"} />
-            {item.category && (
-              <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-400/10 text-blue-400">
-                {item.category.name}
-              </span>
-            )}
-          </div>
+      <div className="flex gap-2 justify-between items-start w-full flex-col md:flex-row">
+        <div className="flex items-center gap-3">
+          <h2 className="text-2xl font-semibold">{item.name}</h2>
+          <StatusToggle itemId={id} initialStatus={item.status ?? "ACTIVE"} />
+          {item.category && (
+            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-400/10 text-blue-400">
+              {item.category.name}
+            </span>
+          )}
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center self-end">
           <StockItemDeleteButton stockItemId={id} />
           <Link
             className="edit-button flex items-center gap-1 px-3 py-2 text-sm border border-base-content/20 rounded-lg hover:bg-base-content/5 transition-colors"

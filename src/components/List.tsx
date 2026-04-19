@@ -731,7 +731,7 @@ export function SupplierLogListItem({
   return (
     <li className="list-logs flex justify-between ">
       {/* Card */}
-      <div className="flex-1 p-3 flex flex-col gap-1.5 min-w-0">
+      <div className="flex-1 p-1 md:p-3 flex flex-col gap-1.5 min-w-0">
         {/* Top row: tags + severity */}
         <div className="flex items-center justify-between gap-2">
           <div className="flex gap-1.5 items-center flex-wrap">

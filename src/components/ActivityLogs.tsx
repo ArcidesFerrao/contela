@@ -284,7 +284,7 @@ export function SupplierLogs({ logs }: { logs: ActivityLogsWithSupplier[] }) {
       </div>
 
       {/* Toolbar */}
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2  flex-col md:flex-row w-full">
         <input
           type="text"
           className="flex-1 text-sm"

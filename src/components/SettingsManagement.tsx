@@ -159,12 +159,7 @@ export function SupplierSettingsManagement({
 
   return (
     <div className="settings-section flex flex-col gap-2 p-4">
-      <div className="flex justify-between">
-        <h3 className="text-lg font-normal">{sert("inventoryManagement")}</h3>
-        <button type="button" onClick={handleSaveSettings}>
-          {isSaving ? t("saving") : st("saveSettings")}
-        </button>
-      </div>
+      <h3 className="text-lg font-normal">{sert("inventoryManagement")}</h3>
       <div className="flex justify-between">
         <div>
           <p>{st("lowStock")}</p>
@@ -181,9 +176,16 @@ export function SupplierSettingsManagement({
               value: parseInt(e.target.value),
             })
           }
-          className="max-w-25"
+          className="max-w-25 h-fit"
         />
       </div>
+      <button
+        className="text-sm md:text-md "
+        type="button"
+        onClick={handleSaveSettings}
+      >
+        {isSaving ? t("saving") : st("saveSettings")}
+      </button>
     </div>
   );
 }

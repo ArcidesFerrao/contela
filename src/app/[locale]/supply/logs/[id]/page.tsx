@@ -110,7 +110,7 @@ export default async function ActivityDetailsPage(props: { params: Params }) {
       {/* Meta card */}
       <div className="stats p-5 flex flex-col gap-5">
         {/* Row 1: action + entity + severity */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="flex flex-col gap-1.5">
             <p className="label-text text-xs uppercase tracking-wide">
               {at("actionType")}
@@ -140,9 +140,6 @@ export default async function ActivityDetailsPage(props: { params: Params }) {
             </span>
           </div>
         </div>
-
-        {/* Divider */}
-        <div className="h-px bg-base-content/10" />
 
         {/* Row 2: description + timestamp */}
         <div className="grid grid-cols-3 gap-4">
