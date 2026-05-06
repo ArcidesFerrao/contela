@@ -16,7 +16,7 @@ export default function UserSettings({
   const t = useTranslations("Common");
   return (
     <>
-      <div className="personal-section flex-col flex gap-5">
+      <div className="personal-section flex-col flex gap-5 p-4 md:p-6">
         <h3>{t("accountSecurity")}</h3>
         <div className="flex gap-5 justify-between  md:items-center border-b flex-col md:flex-row ">
           <div className="flex flex-col">
@@ -50,7 +50,7 @@ export default function UserSettings({
           </span>
         </div>
       </div>
-      <div className="personal-section flex-col border-red-300 flex gap-2">
+      <div className="personal-section flex-col border-red-300 flex gap-2 p-4 md:p-6">
         <h3 className="text-red-300">{t("dangerousZone")}</h3>
         <div className="flex flex-col md:flex-row  gap-5 justify-between  md:items-center">
           <div className="flex flex-col">

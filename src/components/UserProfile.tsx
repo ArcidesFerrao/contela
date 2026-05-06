@@ -63,9 +63,9 @@ export default function UserProfile({ user }: { user: UserProfile }) {
       </div>
       {/* </div> */}
       {view === "personal" && (
-        <div className="personal-section flex flex-col gap-2">
+        <div className="personal-section flex flex-col gap-2 p-4 md:p-6">
           <h3>{t("personalData")}</h3>
-          <div className=" flex justify-between flex-wrap gap-5">
+          <div className=" flex justify-between flex-wrap gap-2 md:gap-5">
             <div className=" flex flex-col gap-2">
               <div className="flex flex-col">
                 <p>{t("fullName")}</p>
@@ -109,7 +109,7 @@ export default function UserProfile({ user }: { user: UserProfile }) {
         </div>
       )}
       {view === "security" && (
-        <div className="security-section flex flex-col gap-2">
+        <div className="security-section flex flex-col gap-2 ">
           <UserSettings
             email={user.email}
             phoneNumber={user.phoneNumber}
@@ -121,7 +121,7 @@ export default function UserProfile({ user }: { user: UserProfile }) {
       {view === "detail" && (
         <>
           {user.role === "SUPPLIER" && user.Supplier && (
-            <div className="details-section flex flex-col md:flex-row gap-5 justify-between">
+            <div className="details-section flex flex-col md:flex-row gap-5 justify-between p-4 md:p-6">
               <div className=" flex flex-col gap-2">
                 <div className="flex flex-col">
                   <p>{supt("companyName")}</p>
@@ -177,7 +177,7 @@ export default function UserProfile({ user }: { user: UserProfile }) {
             </div>
           )}
           {user.role === "SERVICE" && user.Service && (
-            <div className="details-section flex flex-col gap-2">
+            <div className="details-section flex flex-col gap-2 p-4 md:p-6">
               <h3>{t("businessInformation")}</h3>
               <div className=" flex flex-col md:flex-row gap-5">
                 <div className="flex flex-col justify-between gap-2">

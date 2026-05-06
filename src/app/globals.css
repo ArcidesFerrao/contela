@@ -854,7 +854,7 @@ h1 {
 .personal-section {
   border: 1px solid var(--border-list);
   border-radius: 0.4rem;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 .details-section p,
 .products-selection p,
