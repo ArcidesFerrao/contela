@@ -558,11 +558,11 @@ export const CatalogItemForm = ({
       id={form.id}
       action={action}
       onSubmit={form.onSubmit}
-      className="new-item-form flex flex-col gap-4 min-w-md"
+      className="new-item-form flex flex-col gap-4 md:min-w-md "
     >
-      <h2 className="font-extralight">
+      <p className=" text-sm font-extralight">
         {t("fillFormTo")} {item ? t("editThe") : t("createNew")} {t("item")}
-      </h2>
+      </p>
       <section className="flex flex-col gap-4">
         <input
           type="hidden"
@@ -576,6 +576,7 @@ export const CatalogItemForm = ({
         <div className="flex w-full flex-col gap-1 relative">
           <label htmlFor="name">{t("itemName")}</label>
           <input
+            className="text-sm font-light"
             type="text"
             name="name"
             id="name"
@@ -643,6 +644,7 @@ export const CatalogItemForm = ({
           <div className="flex flex-col gap-1">
             <label htmlFor="price">{t("price")}</label>
             <input
+              className="text-sm font-light"
               type="number"
               name="price"
               id="price"
@@ -658,14 +660,14 @@ export const CatalogItemForm = ({
 
           <div className="flex flex-col gap-1">
             <label htmlFor="cost">{t("cost")} (MZN)</label>
-            <span className="text-lg font-medium py-1">
+            <span className="text-md md:text-lg font-medium py-1">
               {calculatedCost > 0 ? `MZN ${calculatedCost.toFixed(2)}` : "—"}
             </span>
           </div>
 
           <div className="flex flex-col gap-1">
             <label htmlFor="margin">{t("margin")}</label>
-            <span className="text-lg font-medium py-1">
+            <span className="text-md md:text-lg font-medium py-1">
               {margin?.toFixed(2)}%
             </span>
             <p className="text-xs font-light text-base-content/50  opacity-65">
@@ -810,7 +812,7 @@ export const CatalogItemForm = ({
             id="description"
             placeholder={t("description")}
             defaultValue={item?.description || ""}
-            className="min-w-80 min-h-40"
+            className="text-sm font-light min-w-80 min-h-40"
           />
           {fields.description.errors && (
             <p className="text-xs font-light">{fields.description.errors}</p>

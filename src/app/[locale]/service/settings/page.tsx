@@ -3,12 +3,14 @@ import { SettingsManagement } from "@/components/SettingsManagement";
 import { ExportData } from "@/components/ExportData";
 import { db } from "@/lib/db";
 import { getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
 
 export default async function SettingsPage() {
   const session = await auth();
   const t = await getTranslations("Common");
   const st = await getTranslations("Settings");
   const sert = await getTranslations("Service");
+  if (!session?.user) redirect("/login");
 
   const serviceId = session?.user.serviceId;
 
