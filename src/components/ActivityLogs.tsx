@@ -127,7 +127,7 @@ export function Logs({ logs }: { logs: ActivityLogsWithService[] }) {
       </div>
 
       {/* Toolbar */}
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-col md:flex-row gap-2 ">
         <input
           type="text"
           className="flex-1 text-sm"

@@ -669,8 +669,8 @@ export default function LogListItem({
   const entity = entityType.toUpperCase();
 
   return (
-    <li className="list-logs flex justify-between ">
-      <div className="flex flex-col gap-2">
+    <li className="list-logs flex flex-col gap-2 ">
+      <div className=" flex gap-2 p-1 justify-between items-center">
         <div className="log-info flex gap-2 items-center">
           <span className="text-xs uppercase text-gray-400 text-wrap">
             {t(actionType.toLocaleLowerCase())}
@@ -683,15 +683,6 @@ export default function LogListItem({
             {t(entity.toLocaleLowerCase())}
           </span>
         </div>
-        <p className="log-desc text-sm truncate ">{description}</p>
-        <p className="font-extralight text-gray-400 text-xs">
-          {timestamp.toLocaleTimeString(undefined, {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </p>
-      </div>
-      <div className=" flex flex-col justify-between gap-2 p-1 text-xs font-extralight">
         <span
           className={`text-xs font-semibold px-1.5 py-0.5 rounded shrink-0 ${
             SEVERITY_STYLES[severity] ?? SEVERITY_STYLES.INFO
@@ -699,8 +690,17 @@ export default function LogListItem({
         >
           {severity}
         </span>
+      </div>
+      <p className="log-desc text-sm truncate ">{description}</p>
+      <div className="log-date flex gap-2 justify-between  items-center">
+        <p className="font-extralight text-gray-400 text-xs">
+          {timestamp.toLocaleTimeString(undefined, {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </p>
         <Link
-          className="hover:underline"
+          className="text-xs font-extralight hover:underline "
           href={`/${locale}/service/logs/${id}`}
         >
           {t("view")} →
