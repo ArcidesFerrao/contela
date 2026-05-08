@@ -249,6 +249,7 @@
     "signIn": "Iniciar Sessão",
     "signUp": "Criar Conta",
     "signingIn": "A iniciar sessão...",
+    "signingUp": "A criar conta...",
     "invalidPasswordOrEmail": "Palavra-passe ou e-mail inválido.",
     "signInWithGoogle": "Iniciar sessão com Google",
     "alreadyHaveAccount": "Já tem uma conta?",
@@ -261,7 +262,15 @@
     "newPassword": "Nova Palavra-passe",
     "confirmPassword": "Confirmar Palavra-passe",
     "reEnter": "Reintroduza a sua palavra-passe",
-    "backToLogin": "Voltar ao login"
+    "backToLogin": "Voltar ao login",
+    "signUpTitle": "Criar nova conta",
+    "signUpSubtitle": "Junte-se à plataforma de gestão empresarial Contela hoje mesmo!",
+    "yourName": "O seu nome",
+    "businessName": "Nome do seu negócio",
+    "emailExample": "exemplo@email.com",
+    "phoneExample": "+258 84 000 0000",
+    "passwordExample": "Pelo menos 8 caracteres",
+    "termsAgreement": "Ao criar uma conta, aceita os <strong>Termos de Uso</strong> e a <strong>Política de Privacidade</strong> da Contela."
   },
   "Responses": {
     "completed": "Concluida",

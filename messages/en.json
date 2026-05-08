@@ -222,6 +222,7 @@
         "signIn": "Sign In",
         "signUp": "Sign Up",
         "signingIn": "Signing in...",
+        "signingUp": "Signing up...",
         "invalidPasswordOrEmail": "Invalid Password or Email.",
         "signInWithGoogle": "Sign in with Google",
         "alreadyHaveAccount": "Already have an account? ",
@@ -234,7 +235,16 @@
         "newPassword": "New Password",
         "confirmPassword": "Confirm Password",
         "reEnter": "Re-enter your password",
-        "backToLogin": "Back to login"
+        "backToLogin": "Back to login",
+        "signUpTitle": "Create a new account",
+  "signUpSubtitle": "Join the Contela business management platform today!",
+  "yourName": "Your name",
+  "businessName": "Your business name",
+  "emailExample": "example@email.com",
+  "phoneExample": "+258 84 000 0000",
+  "passwordExample": "At least 8 characters",
+  "termsAgreement": "By creating an account, you agree to Contela's Terms of Use and Privacy Policy."
+
     },
     "Notifications": {
         "stockAddedSuccess": "Stock item added successfully",
