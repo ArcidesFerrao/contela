@@ -8,7 +8,7 @@ export default function NotFound() {
   const rt = useTranslations("Responses");
   const locale = useLocale();
   return (
-    <div className="home-dash flex flex-col items-center gap-4 py-5">
+    <div className="home-dash flex flex-col items-center justify-center gap-4 py-5">
       <div
         className=" flex flex-col items-center justify-center gap-6 text-center px-4"
         style={{ background: "#14111a", color: "#f4f5fa" }}

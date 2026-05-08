@@ -188,6 +188,159 @@ export default async function Home() {
               ))}
             </div>
           </div>
+
+          {/* Plans */}
+
+          <div className=" pb-10 max-w-xl mx-auto w-full min-w-2xl">
+            <p className="text-xs text-base-content/40 text-center uppercase tracking-widest mb-2">
+              {ht("plans")}
+            </p>
+            <h2 className="text-xl font-semibold text-center mb-1">
+              {ht("plansTitle")}
+            </h2>
+            <p className="text-xs text-base-content/50 text-center mb-8">
+              {ht("plansSubtitle")}
+            </p>
+
+            <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Free */}
+              <div className="stats flex flex-col gap-3  py-6 px-3 border opacity-75 hover:opacity-100">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-base-content/40 mb-1">
+                    {ht("planFreeName")}
+                  </p>
+                  <p className="text-2xl font-semibold">
+                    0{" "}
+                    <span className="text-sm font-light text-base-content/50">
+                      MZN/mês
+                    </span>
+                  </p>
+                  <p className="text-xs text-base-content/40">
+                    {ht("planFreeAnnual")}
+                  </p>
+                </div>
+                <ul className="flex flex-col gap-2 flex-1">
+                  {[
+                    "planFreeFeat1",
+                    "planFreeFeat2",
+                    "planFreeFeat3",
+                    "planFreeFeat4",
+                    "planFreeFeat5",
+                    "planFreeFeat6",
+                    "planFreeFeat7",
+                  ].map((key) => (
+                    <li
+                      key={key}
+                      className="flex items-center gap-2 text-xs text-base-content/60 font-light"
+                    >
+                      <span className="w-3.5 h-3.5 rounded-full bg-green-400/15 text-green-400 flex items-center justify-center text-[9px] font-bold">
+                        ✓
+                      </span>
+                      {ht(key)}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/signup"
+                  className="btn btn-sm btn-outline  rounded-sm w-full mt-2 text-xs py-1 hover:px-1 hover:bg-black"
+                >
+                  {ht("planCTA")}
+                </Link>
+              </div>
+
+              {/* Pro */}
+              <div className="stats flex flex-col gap-3 py-6 px-3 border border-green-400/40 opacity-90 hover:opacity-100 relative">
+                {/* <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] px-3 py-0.5 text-center rounded-full bg-green-700/90 text-green-200 border border-green-400/30 uppercase tracking-widest">
+                  {ht("planPopular")}
+                </span> */}
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-green-400/70 mb-1">
+                    {ht("planProName")}
+                  </p>
+                  <p className="text-2xl font-semibold text-green-400">
+                    259{" "}
+                    <span className="text-sm font-light text-base-content/50">
+                      MZN/mês
+                    </span>
+                  </p>
+                  <p className="text-xs text-base-content/40">
+                    {ht("planProAnnual")}
+                  </p>
+                </div>
+                <ul className="flex flex-col gap-2 flex-1">
+                  {[
+                    "planProFeat1",
+                    "planProFeat2",
+                    "planProFeat3",
+                    "planProFeat4",
+                    "planProFeat5",
+                    "planProFeat6",
+                  ].map((key) => (
+                    <li
+                      key={key}
+                      className="flex items-center gap-2 text-xs text-base-content/60 font-light"
+                    >
+                      <span className="w-3.5 h-3.5 rounded-full bg-green-400/15 text-green-400 flex items-center justify-center text-[9px] font-bold">
+                        ✓
+                      </span>
+                      {ht(key)}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/signup"
+                  className="btn btn-sm w-full mt-2 text-xs rounded-sm text-green-400 border-green-400/30 hover:bg-green-400/30 py-1 hover:px-1"
+                >
+                  {ht("planCTA")}
+                </Link>
+              </div>
+
+              {/* Avançado */}
+              <div className="stats flex flex-col gap-3 py-6 px-3 border border-blue-400/20 opacity-75 hover:opacity-100">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-blue-400/70 mb-1">
+                    {ht("planAdvName")}
+                  </p>
+                  <p className="text-2xl font-semibold">
+                    999{" "}
+                    <span className="text-sm font-light text-base-content/50">
+                      MZN/mês
+                    </span>
+                  </p>
+                  <p className="text-xs text-base-content/40">
+                    {ht("planAdvAnnual")}
+                  </p>
+                </div>
+                <ul className="flex flex-col gap-2 flex-1">
+                  {[
+                    "planAdvFeat1",
+                    "planAdvFeat2",
+                    "planAdvFeat3",
+                    "planAdvFeat4",
+                    "planAdvFeat5",
+                    "planAdvFeat6",
+                    "planAdvFeat7",
+                  ].map((key) => (
+                    <li
+                      key={key}
+                      className="flex items-center gap-2 text-xs text-base-content/60 font-light"
+                    >
+                      <span className="w-3.5 h-3.5 rounded-full bg-blue-400/15 text-blue-400 flex items-center justify-center text-[9px] font-bold">
+                        ✓
+                      </span>
+                      {ht(key)}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/signup"
+                  className="btn btn-sm btn-outline  rounded-sm border-blue-400/30 text-blue-400/70 hover:bg-blue-400/10 w-full mt-2 text-xs py-1 hover:px-1"
+                >
+                  {ht("planCTA")}
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </main>
