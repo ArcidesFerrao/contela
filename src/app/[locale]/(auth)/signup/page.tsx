@@ -41,7 +41,10 @@ export default function SignUpPage() {
     }
   };
   return (
-    <form className="signup-form flex flex-col gap-4 " onSubmit={handleSubmit}>
+    <form
+      className="signup-form flex flex-col py-4 gap-4 "
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col text-center self-center gap-1 max-w-96">
         <h1 className="text-2xl text-center font-semibold">{a("signUp")}</h1>
         <p className="font-light">{a("signUpSubtitle")}</p>

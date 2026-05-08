@@ -67,9 +67,14 @@ export default function LoginPage() {
     return <p>{lt("loading")}</p>;
   }
   return (
-    <form onSubmit={handleSubmit} className="login-form flex flex-col gap-4 ">
+    <form
+      onSubmit={handleSubmit}
+      className="login-form flex flex-col gap-4 py-4"
+    >
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl text-center">{a("welcomeBack")}</h1>
+        <h1 className="text-2xl text-center font-semibold">
+          {a("welcomeBack")}
+        </h1>
         <p className="text-sm font-thin text-center">{a("loginToAccount")}</p>
       </div>
       <div className="flex flex-col gap-2">
