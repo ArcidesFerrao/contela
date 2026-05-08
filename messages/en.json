@@ -425,7 +425,10 @@
         "autoCalculated": "Auto Calculated",
         "addIngredientsToCalculate": "Add Ingredients to Calculate",
         "noIngredientsYet": "No Ingredients Yet",
-        "addIngredient":"Add Ingredient"
+        "addIngredient":"Add Ingredient",
+        "pageNotFound": "Page Not Found",
+        "pageNotFoundMessage": "The page you are looking for does not exist or has been moved.",
+        "goBackHome": "Go Back to Home"
     },
     "Loading": {
         "loading": "Loading...",

@@ -434,7 +434,10 @@
         "addIngredient":"Adicionar ingrediente",
         "usageType": "Uso",
         "ingredients": "Ingredientes",
-        "createExpenseSuccess": "Despesa criada com sucesso"
+        "createExpenseSuccess": "Despesa criada com sucesso",
+        "pageNotFound": "Página não encontrada",
+        "pageNotFoundMessage": "A página que você está procurando não existe ou foi movida.",
+        "goBackHome": "Voltar para o início"
   },
   "Loading": {
     "loading": "A carregar...",
