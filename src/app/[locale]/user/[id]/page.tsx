@@ -1,6 +1,6 @@
 import {
   AdminLink,
-  DashboardMenuLink,
+  // DashboardMenuLink,
   LogOutButton,
   ServiceLink,
   SupplierLink,

@@ -49,10 +49,10 @@ export default async function ProductsPage({
 
   return (
     <div className="products-list flex flex-col gap-5 w-full">
-      <div className="list-header flex items-center justify-between w-full">
+      <div className="list-header flex md:items-center gap-2 justify-between w-full">
         <div className="list-title">
           <h2 className="text-2xl font-medium">{t("items")}</h2>
-          <p className="text-md font-extralight">{it("description")}</p>
+          <p className="text-sm font-extralight">{it("description")}</p>
         </div>
         <Link
           href={`/${locale}/supply/products/new`}

@@ -7,9 +7,13 @@ import Link from "next/link";
 
 export const LogOutButton = () => {
   const t = useTranslations("Common");
+  const locale = useLocale();
 
   return (
-    <button className="logout sm:text-sm md:text-md" onClick={() => signOut()}>
+    <button
+      className="logout sm:text-sm md:text-md"
+      onClick={() => signOut({ callbackUrl: `/${locale}` })}
+    >
       {t("signOut")}
     </button>
   );

@@ -509,12 +509,12 @@ export const SupplierProductForm = ({
       id={form.id}
       action={action}
       onSubmit={form.onSubmit}
-      className="flex flex-col gap-4 min-w-md"
+      className="flex flex-col gap-4"
     >
-      <h2 className="font-extralight">
+      <p className="text-sm font-extralight">
         {`${t("fillFormTo")} ${stockItem ? t("editThe") : t("createNew")}`}{" "}
         {it("stockItem")}
-      </h2>
+      </p>
       <section className="flex flex-col gap-4">
         {stockItem && (
           <input type="hidden" name="id" id="id" value={stockItem.id} />
@@ -530,6 +530,7 @@ export const SupplierProductForm = ({
             <label htmlFor="name">{t("name")}</label>
 
             <input
+              className="text-sm font-light"
               type="text"
               name="name"
               id="name"
@@ -565,7 +566,7 @@ export const SupplierProductForm = ({
                 type="number"
                 name="unitQty"
                 id="unitQty"
-                className="max-w-32"
+                className=" text-sm font-light md:max-w-32"
                 defaultValue={stockItem?.unitQty ?? 1}
               />
               {fields.unitQty.errors && (
@@ -596,10 +597,11 @@ export const SupplierProductForm = ({
           </div>
         </section>
         <div className="form-second-row flex flex-col gap-2 w-full ">
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-col md:flex-row ">
             <div className="flex flex-col gap-1">
               <label htmlFor="price">{t("price")}</label>
               <input
+                className="text-sm font-light"
                 type="number"
                 name="price"
                 id="price"
@@ -620,6 +622,7 @@ export const SupplierProductForm = ({
             <div className="flex flex-col gap-1">
               <label htmlFor="stock">{t("stock")}</label>
               <input
+                className="text-sm font-light"
                 type="number"
                 name="stock"
                 id="stock"
@@ -634,6 +637,7 @@ export const SupplierProductForm = ({
             <div className="flex flex-col gap-1">
               <label htmlFor="cost">{t("cost")}</label>
               <input
+                className="text-sm font-light"
                 type="number"
                 name="cost"
                 id="cost"
@@ -663,7 +667,7 @@ export const SupplierProductForm = ({
             id="description"
             placeholder={t("description")}
             defaultValue={stockItem?.description || ""}
-            className="min-w-80 min-h-40"
+            className="text-sm font-light md:min-w-80 min-h-40"
           />
           {fields.description.errors && (
             <p className="text-xs font-light">{fields.description.errors}</p>
