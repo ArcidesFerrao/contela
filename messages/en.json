@@ -836,6 +836,40 @@
     "featRecipesDesc": "Automatic cost based on used ingredients",
     "featLogsDesc": "Complete history of all operations",
     "featPeriodsDesc": "Filter data by day, week, or month",
-    "featReportsDesc": "Revenue and purchases trend charts"
+    "featReportsDesc": "Revenue and purchases trend charts",
+    "plans": "Plans",
+"plansTitle": "Escolha o plano certo para o seu negócio",
+"plansSubtitle": "Comece de graça. Escale quando precisar.",
+"planPopular": "Mais popular",
+"planCTA": "Começar agora",
+
+"planFreeName": "Free",
+"planFreeAnnual": "0 MZN/ano",
+"planFreeFeat1": "Registo de vendas e serviços",
+"planFreeFeat2": "Gestão básica de estoque",
+"planFreeFeat3": "Alertas de stock baixo",
+"planFreeFeat4": "Cadastro limitado de produtos e materiais",
+"planFreeFeat5": "Histórico básico de vendas",
+"planFreeFeat6": "Conexão básica com fornecedores",
+"planFreeFeat7": "Criação de pedidos simples",
+
+"planProName": "Pro",
+"planProAnnual": "2 499 MZN/ano",
+"planProFeat1": "Produtos e pedidos ilimitados",
+"planProFeat2": "Gestão de compras",
+"planProFeat3": "Movimentação completa de estoque",
+"planProFeat4": "Controle de itens críticos",
+"planProFeat5": "Rastreamento de entregas",
+"planProFeat6": "Relatórios operacionais básicos",
+
+"planAdvName": "Avançado",
+"planAdvAnnual": "8 999 MZN/ano",
+"planAdvFeat1": "Acesso à API",
+"planAdvFeat2": "Integrações personalizadas",
+"planAdvFeat3": "Configurações empresariais adicionais",
+"planAdvFeat4": "Suporte prioritário",
+"planAdvFeat5": "Múltiplos utilizadores",
+"planAdvFeat6": "Histórico operacional completo",
+"planAdvFeat7": "Tudo do plano Pro incluído"
   }
 }

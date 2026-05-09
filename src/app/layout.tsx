@@ -42,10 +42,27 @@ const sansationSans = localFont({
 
 export const metadata: Metadata = {
   title: "Contela",
-  description: "Manage Stock Efficiently",
+  description: "Gestão empresarial para negócios moçambicanos",
   icons: {
     icon: [{ url: "/favicon.png" }],
   },
+  openGraph: {
+    title: "Contela",
+    description: "Gestão empresarial para negócios moçambicanos",
+    url: "https://contela.evolurelabs.com",
+    locale: "pt_MZ",
+    images: ["/evolure-langing.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Contela",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: { "@type": "Offer", price: "0" },
+  description: "Plataforma de gestão para negócios moçambicanos",
 };
 
 export default function RootLayout({
@@ -56,6 +73,10 @@ export default function RootLayout({
   return (
     <html lang="pt-MZ" className={`${sansationSans.variable}  antialiased`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body>{children}</body>

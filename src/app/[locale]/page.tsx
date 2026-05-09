@@ -191,7 +191,7 @@ export default async function Home() {
 
           {/* Plans */}
 
-          <div className=" pb-10 max-w-xl mx-auto w-full min-w-2xl">
+          <div className=" pb-10 max-w-xl mx-auto w-full md:min-w-2xl">
             <p className="text-xs text-base-content/40 text-center uppercase tracking-widest mb-2">
               {ht("plans")}
             </p>
@@ -204,7 +204,7 @@ export default async function Home() {
 
             <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
               {/* Free */}
-              <div className="stats flex flex-col gap-3  py-6 px-3 border opacity-75 hover:opacity-100">
+              <div className="stats flex flex-col gap-3  py-6 px-6 md:px-3 border opacity-65 hover:opacity-100">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-base-content/40 mb-1">
                     {ht("planFreeName")}
@@ -249,7 +249,7 @@ export default async function Home() {
               </div>
 
               {/* Pro */}
-              <div className="stats flex flex-col gap-3 py-6 px-3 border border-green-400/40 opacity-90 hover:opacity-100 relative">
+              <div className="stats flex flex-col gap-3 py-6 px-6 md:px-3 border border-green-400/40 opacity-65 hover:opacity-100 relative">
                 {/* <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] px-3 py-0.5 text-center rounded-full bg-green-700/90 text-green-200 border border-green-400/30 uppercase tracking-widest">
                   {ht("planPopular")}
                 </span> */}
@@ -296,7 +296,7 @@ export default async function Home() {
               </div>
 
               {/* Avançado */}
-              <div className="stats flex flex-col gap-3 py-6 px-3 border border-blue-400/20 opacity-75 hover:opacity-100">
+              <div className="stats flex flex-col gap-3 py-6 px-6 md:px-3 border border-blue-400/20 opacity-65 hover:opacity-100">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-blue-400/70 mb-1">
                     {ht("planAdvName")}
